@@ -55,16 +55,23 @@
 }
 
 .innerContent h1:nth-child(1){
-  font-size: 3.8rem !important;
+  font-size: 1.5rem ;
   text-align: start;
 }
 
 .innerContent h2:nth-child(2){
-  font-size: 4rem !important;
+  font-size: 1.8rem ;
+  text-align: end;
+}
+
+.innerContent h2:nth-child(3){
+  font-size: 1.4rem ;
+  text-align: end;
 }
 
 .innerContent h2:nth-child(4){
-  font-size: 4.5rem !important;
+  font-size: 2rem ;
+  text-align: center;
 }
 
 .textReveal {
@@ -137,6 +144,24 @@
   .locationsContainer {
     display: flex;
     flex-direction: row;
+  }
+
+  .innerContent h1:nth-child(1){
+    font-size: 3.8rem ;
+    text-align: start;
+  }
+  
+  .innerContent h2:nth-child(2){
+    font-size: 4rem ;
+  }
+
+  .innerContent h2:nth-child(3){
+    font-size: 3rem ;
+    text-align: center;
+  }
+  
+  .innerContent h2:nth-child(4){
+    font-size: 4.5rem ;
   }
 
 }
