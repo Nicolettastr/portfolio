@@ -74,9 +74,10 @@ const Home = () => {
       <div className={styles.banner}>
         <div className={styles.bannerContent}>
           <div className={styles.innerContent}>
-            <h1 className={`textReveal ${styles.textReveal}`}>Success is not about being the best. </h1>
-            <h2  className={`textReveal ${styles.textReveal}`}>It is about being better than you were yesterday.</h2>
-            <p className={`textReveal ${styles.textReveal}`}>Unknown.</p>
+            <h1 className={`textReveal ${styles.textReveal}`}>Success is <strong>not</strong></h1>
+            <h2 className={`textReveal ${styles.textReveal}`}>About being the <strong>best</strong>.</h2>
+            <h2  className={`textReveal ${styles.textReveal}`}>It is about <strong>being better</strong></h2>
+            <h2  className={`textReveal ${styles.textReveal}`}>than you <strong>were yesterday.</strong></h2>
           </div>
         </div>
       </div>

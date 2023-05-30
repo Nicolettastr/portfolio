@@ -33,7 +33,7 @@
 .background {
   width: 100%;
   height: 100%;
-  background: rgb(0, 0, 0, 0.8);
+  background: rgb(0, 0, 0, 0.75);
 }
 
 .bannerContent {
@@ -52,6 +52,19 @@
 
 .innerContent p {
   font-size: 1rem;
+}
+
+.innerContent h1:nth-child(1){
+  font-size: 3.8rem !important;
+  text-align: start;
+}
+
+.innerContent h2:nth-child(2){
+  font-size: 4rem !important;
+}
+
+.innerContent h2:nth-child(4){
+  font-size: 4.5rem !important;
 }
 
 .textReveal {
