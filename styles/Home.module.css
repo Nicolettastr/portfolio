@@ -126,6 +126,10 @@
   opacity: 1;
 }
 
+.not {
+  color: #fdffab;
+}
+
 @media (min-width: 600px) {
 
   .banner {
