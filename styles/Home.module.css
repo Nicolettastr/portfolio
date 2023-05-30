@@ -102,6 +102,10 @@
 
 @media (min-width: 600px) {
 
+  .banner {
+    top: -18%;
+  }
+
   .innerContent h1,
   .innerContent h2 {
   font-size: 2rem;
