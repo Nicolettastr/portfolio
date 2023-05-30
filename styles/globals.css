@@ -1,19 +1,18 @@
-html,
-body {
-  padding: 0;
+* {
+  box-sizing: border-box;
+  overflow-x: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  background-image: linear-gradient(to top, #0c010c, #0b0109, #090006, #070004, #040002, #030001, #010000, #000000, #000000, #000000, #000000, #000000);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 #component{
@@ -24,4 +23,11 @@ a {
 #container{
   display: flex;
   width:500vw;
+}
+
+svg {
+  width: 1em;
+  margin: 2em auto;
+  display: block;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }

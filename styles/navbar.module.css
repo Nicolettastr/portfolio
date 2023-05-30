@@ -1,0 +1,51 @@
+.nav_btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar_section {
+    background: transparent;
+}
+
+.navbar_optionsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar_optionsContainer a {
+    width: fit-content;
+    height: fit-content;
+    color: white !important;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    background: rgba(250, 250, 250, 0.1);
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.navbar_optionsContainer a:hover {
+    text-decoration: underline;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.navbar_optionsContainer a svg {
+    margin: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.nav_btn button {
+    width: 45px;
+    background-color: rgb(250, 250, 250, 0.8);
+    border: 1px solid rgb(255, 255, 255);
+    display: grid;
+    place-content: center;
+}
+
+.navbar_image {
+    width: 150px;
+    object-fit: contain;
+}
