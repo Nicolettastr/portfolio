@@ -31,3 +31,9 @@ svg {
   display: block;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
+
+.allContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}

@@ -37,7 +37,8 @@ const Home = () => {
 
   return (
     <>
-      <div ref={bgRef} className={styles.bg}></div>
+    <section className='allContainer'>
+    <div ref={bgRef} className={styles.bg}></div>
       <div className={styles.banner}>
         <div className={styles.bannerContent}>
           <div className={styles.innerContent}>
@@ -52,7 +53,7 @@ const Home = () => {
           <div className={`local ${styles.local}`}>
               <Image 
               className={styles.projectImg}
-              src='/web.jpg'
+              src='/netflix.png'
               width={500}
               height={150}
               />
@@ -60,7 +61,7 @@ const Home = () => {
           <div className={`local ${styles.local}`}>
               <Image 
               className={styles.projectImg}
-              src='/web.jpg'
+              src='/netflix.png'
               width={500}
               height={150}
               />
@@ -68,20 +69,14 @@ const Home = () => {
           <div className={`local ${styles.local}`}>
               <Image 
               className={styles.projectImg}
-              src='/web.jpg'
-              width={500}
-              height={150}
-              />
-          </div>
-          <div className={`local ${styles.local}`}>
-              <Image 
-              className={styles.projectImg}
-              src='/web.jpg'
+              src='/netflix.png'
               width={500}
               height={150}
               />
           </div>
       </div>
+    </section>
+      
     <section ref={containerRef} id="container" className={styles.container}>
       <div id="component" className={styles.one}>sections</div>
       <div id="component" className={styles.two}>sections</div>

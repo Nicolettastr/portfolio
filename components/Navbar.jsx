@@ -1,11 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {BiHomeAlt2} from 'react-icons/bi'
-import {AiOutlineUser} from 'react-icons/ai'
-import {MdWorkOutline} from 'react-icons/md'
-import {BsFileEarmarkPerson} from 'react-icons/bs'
-import {GiStairsGoal} from 'react-icons/gi'
 import styles from '../styles/navbar.module.css'
 import Image from 'next/image';
 
@@ -27,11 +22,11 @@ const NavbarComponent = () => {
                 className={`me-auto my-2 my-lg-0 ${styles.navbar_optionsContainer}`}
                   navbarScroll
               >
-                <Nav.Link href="#action1"><BiHomeAlt2/>Home</Nav.Link>
-                <Nav.Link href="#action2"><AiOutlineUser/>About Me</Nav.Link>
-                <Nav.Link href="#action2"><MdWorkOutline/>Projects</Nav.Link>
-                <Nav.Link href="#action2"><BsFileEarmarkPerson/>Resume</Nav.Link>
-                <Nav.Link href="#action2"><GiStairsGoal/>Future</Nav.Link>
+                <Nav.Link href="#action1">Home</Nav.Link>
+                <Nav.Link href="#action2">About Me</Nav.Link>
+                <Nav.Link href="#action2">Projects</Nav.Link>
+                <Nav.Link href="#action2">Resume</Nav.Link>
+                <Nav.Link href="#action2">Future</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
