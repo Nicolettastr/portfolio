@@ -10,6 +10,38 @@ const Home = () => {
   const containerRef = useRef(null);
   const bgRef = useRef(null);
 
+  const images = [
+    {
+      id: 1,
+      name: '/netflix.png',
+      alt: 'netflix project'
+    },
+    {
+      id: 2,
+      name: '/donair.png',
+      alt: 'donair web site'
+    },
+    {
+      id: 3,
+      name: '/pethouse.png',
+      alt: 'pethouse project'
+    }
+  ];
+
+  const imagesSection = images.map((item) => {
+    return (
+      <div key={item.id} className={`local ${styles.local}`}>
+        <Image 
+        className={styles.projectImg}
+        src={item.name}
+        width={500}
+        height={150}
+        alt={item.alt}
+        />
+      </div>
+    )
+  })
+
   useEffect(() => {
     const components = document.querySelectorAll('#component')
     const textElements = document.querySelectorAll('.textReveal')
@@ -38,7 +70,7 @@ const Home = () => {
   return (
     <>
     <section className='allContainer'>
-    <div ref={bgRef} className={styles.bg}></div>
+    <div ref={bgRef} className={styles.bg}><div className={styles.background}></div></div>
       <div className={styles.banner}>
         <div className={styles.bannerContent}>
           <div className={styles.innerContent}>
@@ -50,30 +82,7 @@ const Home = () => {
       </div>
 
       <div className={styles.locationsContainer}>
-          <div className={`local ${styles.local}`}>
-              <Image 
-              className={styles.projectImg}
-              src='/netflix.png'
-              width={500}
-              height={150}
-              />
-          </div>
-          <div className={`local ${styles.local}`}>
-              <Image 
-              className={styles.projectImg}
-              src='/netflix.png'
-              width={500}
-              height={150}
-              />
-          </div>
-          <div className={`local ${styles.local}`}>
-              <Image 
-              className={styles.projectImg}
-              src='/netflix.png'
-              width={500}
-              height={150}
-              />
-          </div>
+          {imagesSection}
       </div>
     </section>
       
