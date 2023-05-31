@@ -11,9 +11,9 @@
   width: 100vw;
   height: 100vh;
   background-color: antiquewhite;
-  
   overflow: hidden;
 }
+
 .two{
   background-color: aqua;
   display: flex;
@@ -39,23 +39,23 @@
   background-color: cyan;
 }
 
-#componentOneImg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .bg {
-  height: 100vh;
-  background: url('https://fondosmil.com/fondo/34276.jpg');
+  height: 100%;
   background-size: cover;
   background-position: center;
+  opacity: 1;
+  overflow: hidden;
 }
 
 .background {
   width: 100%;
   height: 100%;
-  background: rgb(0, 0, 0, 0.88);
+  background: rgb(0, 0, 0, 0.85);
+}
+
+.videoContainer {
+  width: 100%;
+  overflow: hidden;
 }
 
 .bannerContent {
@@ -114,12 +114,16 @@
 
 .local {
   width: 100%;
-  height: 150px;
+  height: 130px;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   opacity: 0;
   transform: translateY(2em);
   overflow: hidden !important;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.8);
 }
 
 .local:before {
@@ -128,24 +132,47 @@
   width: 100%;
   top: 0%;
   height: 100%;
-  background: rgb(235, 21, 255);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.localInner {
+  width: 95%;
+  height: 95%;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0.7;
+  transition: all 2s;
+  border: none;
+  color: white;
+}
+
+.localInfo {
+  padding: 0 2rem;
+}
+
+.localInfo p {
+  text-align: center;
+}
+
+.localInner h2 {
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 .local span {
   height: 100% !important;
 }
 
-.projectImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: all 1s;
-}
-
-.projectImg:hover {
-  transform: scale(1.1);
+.localInner:hover {
+  transform: scale(1.15);
   opacity: 1;
+  background: rgb(224, 223, 224, 0.9);
+  color: black;
+  border: none;
+  border-radius: 0%;
 }
 
 .not {
@@ -164,10 +191,37 @@
     font-weight: lighter;
   }
 
+  .innerContent h1:nth-child(1){
+    font-size: 2.5rem ;
+    text-align: start;
+  }
+  
+  .innerContent h2:nth-child(2){
+    font-size: 2.8rem ;
+  }
+
+  .innerContent h2:nth-child(3){
+    font-size: 2rem ;
+    text-align: center;
+  }
+  
+  .innerContent h2:nth-child(4){
+    font-size: 3rem ;
+  }
+
   .locationsContainer {
     display: flex;
     flex-direction: row;
   }
+
+  .local {
+    max-width: none;
+    height: 200px;
+  }
+
+}
+
+@media (min-width: 700px) {
 
   .innerContent h1:nth-child(1){
     font-size: 3.8rem ;
@@ -185,13 +239,5 @@
   
   .innerContent h2:nth-child(4){
     font-size: 4.5rem ;
-  }
-
-}
-
-@media (min-width: 700px) {
-  .local {
-    max-width: none;
-    height: 200px;
   }
 }

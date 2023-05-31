@@ -15,30 +15,35 @@ const Home = () => {
     {
       id: 1,
       name: '/netflix.png',
-      alt: 'netflix project'
+      alt: 'Netflix clone',
+      skils: 'HTML, CSS, Javascript, React, Firebase, Stripe',
+      description: 'A Netflix-clone website project.'
     },
     {
       id: 2,
       name: '/donair.png',
-      alt: 'donair web site'
+      alt: 'Donair',
+      skils: 'HTML, CSS, Javascript, React, Bootstrap',
+      description: 'Climatization, services and projects company.'
     },
     {
       id: 3,
       name: '/pethouse.png',
-      alt: 'pethouse project'
+      alt: 'Pethouse',
+      skils: 'HTML, CSS, Javascript, React, Bootstrap, Python, Flask, MySQL',
+      description: 'Pet hotels Marketplace.'
     }
   ];
 
   const imagesSection = images.map((item) => {
     return (
       <div key={item.id} className={`local ${styles.local}`}>
-        <Image 
-        className={styles.projectImg}
-        src={item.name}
-        width={500}
-        height={150}
-        alt={item.alt}
-        />
+        <div className={styles.localInner}>
+          <h2>{item.alt}</h2>
+          <div className={styles.localInfo}>
+            <p>{item.description}</p>
+          </div>
+        </div>
       </div>
     )
   })
@@ -55,9 +60,10 @@ const Home = () => {
     const bgRefElement = bgRef.current;
 
     let tl = gsap.timeline();
-    tl.from(bgRefElement, { scale: 0.6, duration: 2, opacity: 0, delay: 0.2 })
+    tl.from(bgRefElement, { scale: 0.5, duration: 2, opacity: 0, delay: 0.2 })
       .to(textElements, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y: 0, stagger: 0.3, duration: 1 }, "-=0.9")
       .to(localElements, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, stagger: .3, opacity: 1, duration: 1 }, '+=1')
+      
 
     let main = gsap.to(components, {
       xPercent: -100 * (components.length - 1),
@@ -80,7 +86,7 @@ const Home = () => {
         containerAnimation: main,
         markers: true
       }
-    }).from(componentOneImg, { scale: 1.6})
+    }).from(componentOneImg, { scale: 1.3})
 
     gsap.timeline({
       scrollTrigger: {
@@ -100,7 +106,14 @@ const Home = () => {
   return (
     <>
     <section className='allContainer'>
-    <div ref={bgRef} className={styles.bg}><div className={styles.background}></div></div>
+    <div ref={bgRef} className={styles.bg}>
+      <div className={styles.background}></div>
+      <div className={styles.videoContainer}>
+        <video muted autoPlay loop >
+          <source src='/pexel.mp4' type='video/mp4' />
+        </video>
+      </div>
+      </div>
       <div className={styles.banner}>
         <div className={styles.bannerContent}>
           <div className={styles.innerContent}>
@@ -122,6 +135,10 @@ const Home = () => {
         <Image 
         id='componentOneImg'
         src={webImage} />
+        <div id='componentOneText'>
+          <h1>But...</h1>
+          <h2>Who Am I?</h2>
+        </div>
       </div>
       <div id="componentTwo" className={`component ${styles.two}`}>
         <div id='componentTwoImg' className={styles.square}>
