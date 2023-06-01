@@ -133,7 +133,7 @@ const Home = () => {
     <section ref={containerRef} id="container" className={styles.container}>
       <div id="componentPrevOne" className={`component ${styles.prevone}`}>
         <div className={styles.wrapper}>
-          <h1  className={`${styles.textStatic}`}>I'm A</h1>
+          <h1  className={`${styles.textStatic}`}>I am A</h1>
           <ul className={`${styles.textDynamic}`}>
             <li><span>Frontend Developer</span></li>
             <li><span>Creative Coder</span></li>
