@@ -32,6 +32,7 @@
   padding: 0;
   line-height: 40px;
   height: 40px;
+  overflow: hidden;
 }
 
 .textDynamic li {
@@ -40,6 +41,7 @@
   position: relative;
   top: 0;
   animation: textChanging 15s steps(5) infinite;
+  overflow: hidden;
 }
 
 @keyframes textChanging {
@@ -66,22 +68,29 @@
 @keyframes textAppear {
   100% {
     left: 100%;
-    margin: 0 -25px 0 25px;
+    margin: 0 -10px 0 15px;
   }
+}
+
+.info {
+  color: rgb(192, 190, 190);
+  font-size: 1.2rem;
+  text-align: justify;
+  padding: 0.5rem 2rem 0 0.3rem;
 }
 
 .one{
   width: 100vw;
   height: 100vh;
-  background-color: #EBE4E4;
+  background-color: rgba(17, 17, 17, 0.322);
   overflow: hidden;
 }
 
 .two{
-  background-color: aqua;
+  background-color: black;
   display: flex;
   align-items: center;
-  padding-left: 5rem;
+  padding-left: 1rem;
 }
 
 .square {
@@ -107,17 +116,6 @@
   background-size: cover;
   background-position: center;
   opacity: 1;
-  overflow: hidden;
-}
-
-.background {
-  width: 100%;
-  height: 100%;
-  background: rgb(0, 0, 0, 0.85);
-}
-
-.videoContainer {
-  width: 100%;
   overflow: hidden;
 }
 
@@ -242,9 +240,46 @@
   font-weight: 600;
 }
 
+.componentOneImage {
+  overflow: hidden;
+  margin: 0;
+}
+
+.componentOneImage span {
+  height: 100% !important;
+}
+
+.sectionTwo {
+  width: 100vw !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0 3rem 0;
+}
+
+.sectionTwo h2 {
+  color: white;
+  padding-bottom: 0.5rem;
+  overflow: hidden;
+  margin: 0;
+}
+
+.mainContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+}
+
+.skilssContent {
+  height: fit-content;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  overflow: hidden;
+}
+
 
 @media (min-width: 600px) {
-
   .banner {
     top: -18%;
   }
@@ -280,15 +315,20 @@
 
   .local {
     max-width: none;
-    height: 200px;
+    height: 150px;
   }
 
   .prevone {
-    width: 35vw;
+    width: 55vw;
   }
   
   .one{
-    width: 65vw;
+    width: 45vw;
+  }
+
+  .skilssContent {
+    height: fit-content;
+    display: flex;
   }
 
 }
@@ -296,20 +336,31 @@
 @media (min-width: 700px) {
 
   .innerContent h1:nth-child(1){
-    font-size: 3.8rem ;
+    font-size: 2.8rem ;
     text-align: start;
   }
   
   .innerContent h2:nth-child(2){
-    font-size: 4rem ;
+    font-size: 3rem ;
   }
 
   .innerContent h2:nth-child(3){
-    font-size: 2.8rem ;
+    font-size: 1.8rem ;
     text-align: center;
   }
   
   .innerContent h2:nth-child(4){
-    font-size: 4.5rem ;
+    font-size: 3rem ;
   }
+
+  .textDynamic {
+    font-size: 2.7rem;
+    overflow: hidden;
+  }
+  
+  .textStatic {
+    font-size: 4.5rem;
+    overflow: hidden;
+  }
+
 }

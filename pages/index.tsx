@@ -3,13 +3,160 @@ import styles from '../styles/Home.module.css'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
+import VideoComponent from '../components/videoComponent'
 import { useEffect, useRef } from 'react'
 import webImage from '../public/web.png'
+import canva from '../public/skills/canva.svg'
+import css from '../public/skills/css.svg'
+import figma from '../public/skills/figma.svg'
+import flask from '../public/skills/flask.svg'
+import git from '../public/skills/git.svg'
+import github from '../public/skills/github.svg'
+import gpt from '../public/skills/gpt.svg'
+import html from '../public/skills/html.svg'
+import javascript from '../public/skills/javascript.svg'
+import linkedin from '../public/skills/linkedin.svg'
+import nextjs from '../public/skills/nextjs.svg'
+import postman from '../public/skills/postman.svg'
+import python from '../public/skills/python.svg'
+import react from '../public/skills/react.svg'
+import redux from '../public/skills/redux.svg'
+import slack from '../public/skills/slack.svg'
+import sql from '../public/skills/sql.svg'
+import trello from '../public/skills/trello.svg'
+import vercel from '../public/skills/vercel.svg'
+import youtube from '../public/skills/youtube.svg'
+import blender from '../public/skills/blender.svg'
+import threejs from '../public/skills/youtube.svg'
+import gsapLogo from '../public/skills/gsap.png'
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
   const containerRef = useRef(null);
   const bgRef = useRef(null);
+
+  const languages = [
+    {
+      name: 'HTML',
+      icon: html
+    },
+    {
+      name: 'CSS',
+      icon: css
+    },
+    {
+      name: 'Javascript',
+      icon: javascript
+    },
+    {
+      name: 'React',
+      icon: react
+    },
+    {
+      name: 'Python',
+      icon: python
+    },
+    {
+      name: 'MySQL',
+      icon: sql
+    },
+  ]
+
+  const myLanguages = languages.map((item, index) => {
+    return (
+      <div key={index} className={`componentTwoImg ${styles.icons}`}>
+        <Image src={item.icon.src} width={50} height={50}/>
+      </div>
+    )
+  })
+
+  const frameworksLibraries = [
+    {
+      name: 'Flask',
+      icon: flask
+    },
+    {
+      name: 'Next.js',
+      icon: nextjs
+    },
+    {
+      name: 'Redux',
+      icon: redux
+    },
+    {
+      name: 'Three.js',
+      icon: threejs
+    },
+    {
+      name: 'Blender',
+      icon: blender
+    },
+  ]
+
+  
+  const myFrameworksLibraries = frameworksLibraries.map((item, index) => {
+    return (
+      <div key={index} className={`componentTwoImg ${styles.icons}`}>
+        <Image src={item.icon.src} width={50} height={50}/>
+      </div>
+    )
+  })
+
+  const tools = [
+    {
+      name: 'Git',
+      icon: git
+    },
+    {
+      name: 'Postman',
+      icon: postman
+    },
+    {
+      name: 'Gsap',
+      icon: gsapLogo
+    },
+    {
+      name: 'Figma',
+      icon: figma
+    },
+    {
+      name: 'Canva',
+      icon: canva
+    },
+    {
+      name: 'Trello',
+      icon: trello
+    },
+    {
+      name: 'Slack',
+      icon: slack
+    },
+    {
+      name: 'Vercel',
+      icon: vercel
+    },
+    {
+      name: 'Youtube',
+      icon: youtube
+    },
+    {
+      name: 'LinkdIn',
+      icon: linkedin
+    },
+    {
+      name: 'Chat GPT',
+      icon: gpt
+    },
+
+  ]
+
+  const myTools = tools.map((item, index) => {
+    return (
+      <div key={index} className={`componentTwoImg ${styles.icons}`}>
+        <Image src={item.icon.src} width={50} height={50}/>
+      </div>
+    )
+  })
 
   const images = [
     {
@@ -46,17 +193,16 @@ const Home = () => {
         </div>
       </div>
     )
-  })
+  });
 
   useEffect(() => {
     const components = document.querySelectorAll('.component')
     const textElements = document.querySelectorAll('.textReveal')
-    const componentPrevOne = document.querySelector('#componentPrevOne')
-    const textRevealPrevOne = document.querySelectorAll('.textRevealPrevOne')
-    const componentOne = document.querySelector('#componentOne')
+    const componentOne = document.querySelector('#componentPrevOne')
     const componentOneImg = document.querySelector('#componentOneImg')
     const componentTwo = document.querySelector('#componentTwo')
-    const componentTwoImg = document.querySelector('#componentTwoImg')
+    const wrapper = document.querySelector('#wrapper')
+    const componentTwoImg = document.querySelectorAll('.componentTwoImg')
     const localElements = document.querySelectorAll('.local')
     const containerElement = containerRef.current;
     const bgRefElement = bgRef.current;
@@ -82,13 +228,24 @@ const Home = () => {
     gsap.timeline({
       scrollTrigger: {
         trigger: componentOne,
+        start: "top top",
+        end: 'right left',
+        scrub: true,
+        containerAnimation: main,
+        markers: true
+      }
+    }).from(wrapper, { opacity: 1}, '-=2')
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: componentOne,
         start: "left left",
         end: 'right left',
         scrub: true,
         containerAnimation: main,
         markers: true
       }
-    }).from(componentOneImg, { scale: 1.3})
+    }).from(componentOneImg, { scale: 1.6})
 
     gsap.timeline({
       scrollTrigger: {
@@ -99,7 +256,7 @@ const Home = () => {
         containerAnimation: main,
         markers: true
       }
-    }).to(componentTwoImg, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, opacity: 1, duration: 1, rotate: -90, scale: 0.9 }, '+=1')
+    }).to(componentTwoImg, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, rotate: 362, opacity: 1, duration: 1, scale: 1 }, '+=1')
 
   }, [])
 
@@ -107,12 +264,7 @@ const Home = () => {
     <>
     <section className='allContainer'>
     <div ref={bgRef} className={styles.bg}>
-      <div className={styles.background}></div>
-      <div className={styles.videoContainer}>
-        <video muted autoPlay loop >
-          <source src='/pexel.mp4' type='video/mp4' />
-        </video>
-      </div>
+      <VideoComponent />
       </div>
       <div className={styles.banner}>
         <div className={styles.bannerContent}>
@@ -125,15 +277,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className={styles.locationsContainer}>
+      <div id='projectsInfo' className={styles.locationsContainer}>
           {imagesSection}
       </div>
     </section>
       
     <section ref={containerRef} id="container" className={styles.container}>
       <div id="componentPrevOne" className={`component ${styles.prevone}`}>
-        <div className={styles.wrapper}>
-          <h1  className={`${styles.textStatic}`}>I am A</h1>
+        <div id='wrapper' className={styles.wrapper}>
+        <h1 className={`${styles.textStatic}`}>{`I'm a`}</h1>
           <ul className={`${styles.textDynamic}`}>
             <li><span>Frontend Developer</span></li>
             <li><span>Creative Coder</span></li>
@@ -141,21 +293,49 @@ const Home = () => {
             <li><span>Problem Solver</span></li>
             <li><span>Continuous Learner</span></li>
           </ul>
+          <div className={styles.info}>
+            <p>My name is Nicole Struggia</p>
+            <p>A self-taught Frontend Developer. I am skilled in HTML, CSS, JavaScript and React.</p>
+            <p>I am always looking to expand my skills. One area of interest to me is 3D and animations. I am actively learning Three.js, Blender, and CSS animations.
+          </p>
+          </div>
         </div>
       </div>
-      <div id="componentOne" className={`component ${styles.one}`}>
-        <Image 
-        id='componentOneImg'
-        src={webImage} />
-      </div>
-      <div id="componentTwo" className={`component ${styles.two}`}>
-        <div id='componentTwoImg' className={styles.square}>
-        </div>
-        <div id='componentTwoText' className={styles.squareText}>
-        </div>
-      </div>
-      <div id="componentThree" className={`component ${styles.three}`}>sections</div>
-      <div id="componentFour" className={`component ${styles.four}`}>sections</div>
+      <section id="componentOne" className={`component componentOne ${styles.one}`}>
+          <figure className={styles.componentOneImage}>
+            <Image 
+            id='componentOneImg'
+            src={webImage} />
+          </figure>
+      </section>
+
+
+      <section id="componentTwo" className={`component ${styles.two}`}>
+        <section className={styles.sectionTwo}>
+          <div className={styles.mainContent}>
+            <h2>Languages</h2>
+            <div className={styles.skilssContent}>
+              {myLanguages}
+            </div>
+          </div>
+          <div className={styles.mainContent}>
+            <h2>Frameworks and Libraries</h2>
+            <div className={styles.skilssContent}>
+              {myFrameworksLibraries}
+            </div>
+          </div>
+          <div className={styles.mainContent}>
+            <h2>Tools</h2>
+            <div className={styles.skilssContent}>
+              {myTools}
+            </div>
+          </div>
+        </section>
+      </section>
+
+
+      <section id="componentThree" className={`component ${styles.three}`}>sections</section>
+      <section id="componentFour" className={`component ${styles.four}`}>sections</section>
     </section>
     </>
   )
