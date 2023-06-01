@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
-import webImage from '../public/web.jpg'
+import webImage from '../public/web.png'
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -51,6 +51,8 @@ const Home = () => {
   useEffect(() => {
     const components = document.querySelectorAll('.component')
     const textElements = document.querySelectorAll('.textReveal')
+    const componentPrevOne = document.querySelector('#componentPrevOne')
+    const textRevealPrevOne = document.querySelectorAll('.textRevealPrevOne')
     const componentOne = document.querySelector('#componentOne')
     const componentOneImg = document.querySelector('#componentOneImg')
     const componentTwo = document.querySelector('#componentTwo')
@@ -99,8 +101,6 @@ const Home = () => {
       }
     }).to(componentTwoImg, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, opacity: 1, duration: 1, rotate: -90, scale: 0.9 }, '+=1')
 
-
-
   }, [])
 
   return (
@@ -131,14 +131,22 @@ const Home = () => {
     </section>
       
     <section ref={containerRef} id="container" className={styles.container}>
+      <div id="componentPrevOne" className={`component ${styles.prevone}`}>
+        <div className={styles.wrapper}>
+          <h1  className={`${styles.textStatic}`}>I'm A</h1>
+          <ul className={`${styles.textDynamic}`}>
+            <li><span>Frontend Developer</span></li>
+            <li><span>Creative Coder</span></li>
+            <li><span>Tech Enthusiast</span></li>
+            <li><span>Problem Solver</span></li>
+            <li><span>Continuous Learner</span></li>
+          </ul>
+        </div>
+      </div>
       <div id="componentOne" className={`component ${styles.one}`}>
         <Image 
         id='componentOneImg'
         src={webImage} />
-        <div id='componentOneText'>
-          <h1>But...</h1>
-          <h2>Who Am I?</h2>
-        </div>
       </div>
       <div id="componentTwo" className={`component ${styles.two}`}>
         <div id='componentTwoImg' className={styles.square}>

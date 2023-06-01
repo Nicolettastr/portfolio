@@ -7,10 +7,76 @@
   place-content: center;
 }
 
+.prevone {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+}
+
+.wrapper {
+}
+
+.textStatic,
+.textDynamic {
+  color: white;
+  font-weight: 600;
+}
+
+.textDynamic {
+  font-size: 2.2rem;
+}
+
+.textStatic {
+  font-size: 4rem;
+}
+
+.textDynamic {
+  padding: 0;
+  line-height: 40px;
+  height: 40px;
+}
+
+.textDynamic li {
+  list-style: none;
+  color: #97cba9;
+  position: relative;
+  top: 0;
+  animation: textChanging 15s steps(5) infinite;
+}
+
+@keyframes textChanging {
+  100% {
+    top: -200px;
+  }
+}
+
+.textDynamic li span{
+  position: relative;
+}
+
+.textDynamic li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  border-left: 2px solid #97cba9;
+  animation: textAppear 3s steps(20) infinite;
+}
+
+@keyframes textAppear {
+  100% {
+    left: 100%;
+    margin: 0 -25px 0 25px;
+  }
+}
+
 .one{
   width: 100vw;
   height: 100vh;
-  background-color: antiquewhite;
+  background-color: #EBE4E4;
   overflow: hidden;
 }
 
@@ -179,6 +245,7 @@
   font-weight: 600;
 }
 
+
 @media (min-width: 600px) {
 
   .banner {
@@ -217,6 +284,14 @@
   .local {
     max-width: none;
     height: 200px;
+  }
+
+  .prevone {
+    width: 35vw;
+  }
+  
+  .one{
+    width: 65vw;
   }
 
 }
