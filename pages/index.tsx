@@ -232,7 +232,6 @@ const Home = () => {
         end: 'right left',
         scrub: true,
         containerAnimation: main,
-        markers: true
       }
     }).from(wrapper, { opacity: 1}, '-=2')
 
@@ -243,7 +242,6 @@ const Home = () => {
         end: 'right left',
         scrub: true,
         containerAnimation: main,
-        markers: true
       }
     }).from(componentOneImg, { scale: 1.6})
 
@@ -254,9 +252,8 @@ const Home = () => {
         end: 'left left',
         scrub: true,
         containerAnimation: main,
-        markers: true
       }
-    }).to(componentTwoImg, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, rotate: 362, opacity: 1, duration: 1, scale: 1 }, '+=1')
+    }).to(componentTwoImg, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, rotate: 360, opacity: 1, duration: 1, scale: 1 }, '+=1')
 
   }, [])
 

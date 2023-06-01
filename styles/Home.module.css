@@ -311,6 +311,7 @@
   .locationsContainer {
     display: flex;
     flex-direction: row;
+    cursor: pointer;
   }
 
   .local {
