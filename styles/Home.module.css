@@ -196,6 +196,16 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
+.local:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 5px;
+  background: #97cba9;
+  top: 0;
+  left: 0;
+}
+
 .localInner {
   width: 95%;
   height: 95%;
@@ -316,7 +326,7 @@
 
   .local {
     max-width: none;
-    height: 150px;
+    height: 140px;
   }
 
   .prevone {
