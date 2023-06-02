@@ -253,7 +253,7 @@ const Home = () => {
         scrub: true,
         containerAnimation: main,
       }
-    }).to(componentTwoImg, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, rotate: 360, opacity: 1, duration: 1, scale: 1 }, '+=1')
+    }).from(componentTwoImg, { rotate: 45, scale: 0})
 
   }, [])
 
