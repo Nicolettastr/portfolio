@@ -193,25 +193,25 @@ const Home = () => {
     {
       id:1,
       name: 'Portfolio',
-      link: '',
+      link: 'https://nicolestruggia.vercel.app/',
       description: "My personal portfolio."
     },
     {
       id:2,
       name: 'Donair',
-      link: '',
+      link: 'https://donair.es',
       description: "A climate control, services and projects company."
     },
     {
       id:3,
       name: '2kids',
-      link: '',
+      link: 'https://github.com/Nicolettastr/2kids',
       description: "Marketplace for parents to find baby products"
     },
     {
       id:5,
       name: 'Netflix',
-      link: '',
+      link: 'https://netflix-clone-a3f34.web.app/',
       description: 'Stunning Netflix website replica'
     },
   ];
@@ -222,7 +222,7 @@ const Home = () => {
         <h2 className={styles.projectTtitle}>{item.name}</h2>
         <div className={styles.cardBody}>
           <p>{item.description}</p>
-          <a className={styles.link} href={item.link}>
+          <a target="_blank" rel="noreferrer" className={styles.link} href={item.link} >
             <button className={styles.projectBtn}>View</button>
           </a>
         </div>
