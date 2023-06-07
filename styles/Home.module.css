@@ -87,6 +87,7 @@
 }
 
 .two{
+  width: 100vw;
   background-color: black;
   display: flex;
   align-items: center;
@@ -102,7 +103,7 @@
 }
 
 .three{
-  background-color: aquamarine;
+  background-color: black;
 }
 .four{
   background-color: chocolate;
@@ -202,6 +203,7 @@
   width: 50%;
   height: 5px;
   background: #97cba9;
+  border-radius: 0.3rem;
   top: 0;
   left: 0;
 }
@@ -260,7 +262,7 @@
 }
 
 .sectionTwo {
-  width: 100vw !important;
+  width: 80vw !important;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -271,7 +273,9 @@
   color: white;
   padding-bottom: 0.5rem;
   overflow: hidden;
-  margin: 0;
+  font-weight: 600;
+  position: relative;
+  transition: all 2s;
 }
 
 .mainContent {
@@ -288,6 +292,72 @@
   overflow: hidden;
 }
 
+.componentThreeCont {
+  width: 100%;
+  height: 100%;
+  background: black;
+  clip-path: polygon(100% 0, 86% 0, 86% 100%, 100% 100%);
+  transition: all 1s;
+}
+
+.projectsContainer {
+  width: 95%;
+  max-width: 280px;
+  height: 150px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #131518;
+  color: white;
+  border-radius: 0.3rem;
+  position: relative;
+}
+
+.projectsContainer::after {
+  content: "";
+  width: 45%;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.3rem;
+  background: #97cba9;
+}
+
+.cardBody,
+.projectsContainer,
+.link,
+.componentThreeCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectTtitle {
+  overflow: hidden;
+}
+
+.cardBody {
+  font-size: 1.1rem;
+}
+
+.cardBody p {
+  overflow: hidden;
+}
+
+.projectBtn {
+  width: 100px;
+  height: 40px;
+  background-color: #97cba9;
+  border: none;
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.cardBody a {
+  text-decoration: none;
+}
 
 @media (min-width: 600px) {
   .banner {
@@ -340,6 +410,40 @@
   .skilssContent {
     height: fit-content;
     display: flex;
+  }
+
+  .cardContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .componentThreeCont {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .moreBtn {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 5rem;
+  }
+
+  .projectsContainer {
+    max-width: 350px;
+    height: 250px;
+    margin: 0.5rem 4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .cardBody {
+    padding: 1rem 0.5rem;
+  }
+
+  .projectBtn {
+    margin-top: 1rem;
   }
 
 }

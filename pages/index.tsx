@@ -15,7 +15,6 @@ import github from '../public/skills/github.svg'
 import gpt from '../public/skills/gpt.svg'
 import html from '../public/skills/html.svg'
 import javascript from '../public/skills/javascript.svg'
-import linkedin from '../public/skills/linkedin.svg'
 import nextjs from '../public/skills/nextjs.svg'
 import postman from '../public/skills/postman.svg'
 import python from '../public/skills/python.svg'
@@ -25,9 +24,8 @@ import slack from '../public/skills/slack.svg'
 import sql from '../public/skills/sql.svg'
 import trello from '../public/skills/trello.svg'
 import vercel from '../public/skills/vercel.svg'
-import youtube from '../public/skills/youtube.svg'
 import blender from '../public/skills/blender.svg'
-import threejs from '../public/skills/youtube.svg'
+import threejs from '../public/skills/threejs.svg'
 import gsapLogo from '../public/skills/gsap.png'
 
 const Home = () => {
@@ -108,12 +106,20 @@ const Home = () => {
       icon: git
     },
     {
+      name: 'Github',
+      icon: github
+    },
+    {
       name: 'Postman',
       icon: postman
     },
     {
       name: 'Gsap',
       icon: gsapLogo
+    },
+    {
+      name: 'Vercel',
+      icon: vercel
     },
     {
       name: 'Figma',
@@ -130,18 +136,6 @@ const Home = () => {
     {
       name: 'Slack',
       icon: slack
-    },
-    {
-      name: 'Vercel',
-      icon: vercel
-    },
-    {
-      name: 'Youtube',
-      icon: youtube
-    },
-    {
-      name: 'LinkdIn',
-      icon: linkedin
     },
     {
       name: 'Chat GPT',
@@ -171,14 +165,14 @@ const Home = () => {
       name: '/donair.png',
       alt: 'Donair',
       skils: 'HTML, CSS, Javascript, React, Bootstrap',
-      description: 'Climatization, services and projects company.'
+      description: 'Climate control, services and projects company.'
     },
     {
       id: 3,
       name: '/pethouse.png',
       alt: 'Pethouse',
       skils: 'HTML, CSS, Javascript, React, Bootstrap, Python, Flask, MySQL',
-      description: 'Pet hotels Marketplace.'
+      description: 'A Platform to search for hotels options for pets.'
     }
   ];
 
@@ -195,12 +189,55 @@ const Home = () => {
     )
   });
 
+  const projectsSection = [
+    {
+      id:1,
+      name: 'Portfolio',
+      link: '',
+      description: "My personal portfolio."
+    },
+    {
+      id:2,
+      name: 'Donair',
+      link: '',
+      description: "A climate control, services and projects company."
+    },
+    {
+      id:3,
+      name: '2kids',
+      link: '',
+      description: "Marketplace for parents to find baby products"
+    },
+    {
+      id:5,
+      name: 'Netflix',
+      link: '',
+      description: 'Stunning Netflix website replica'
+    },
+  ];
+
+  const portfolioCard = projectsSection.map((item) => {
+    return (
+      <div key={item.id} className={styles.projectsContainer}>
+        <h2 className={styles.projectTtitle}>{item.name}</h2>
+        <div className={styles.cardBody}>
+          <p>{item.description}</p>
+          <a className={styles.link} href={item.link}>
+            <button className={styles.projectBtn}>View</button>
+          </a>
+        </div>
+      </div>
+    )
+  })
+
   useEffect(() => {
     const components = document.querySelectorAll('.component')
     const textElements = document.querySelectorAll('.textReveal')
     const componentOne = document.querySelector('#componentPrevOne')
     const componentOneImg = document.querySelector('#componentOneImg')
     const componentTwo = document.querySelector('#componentTwo')
+    const componentThree = document.querySelector('#componentThree')
+    const componentThreeCont = document.querySelector('#componentThreeCont')
     const wrapper = document.querySelector('#wrapper')
     const componentTwoImg = document.querySelectorAll('.componentTwoImg')
     const localElements = document.querySelectorAll('.local')
@@ -254,6 +291,18 @@ const Home = () => {
         containerAnimation: main,
       }
     }).from(componentTwoImg, { rotate: 45, scale: 0})
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: componentTwo,
+        start: "center left",
+        end: 'left left',
+        scrub: true,
+        containerAnimation: main,
+        markers: true,
+      }
+    }).to(componentThreeCont, {clipPath: "polygon(100% 0, 0 0, 0 100%, 100% 100%)"}
+    )
 
   }, [])
 
@@ -331,7 +380,24 @@ const Home = () => {
       </section>
 
 
-      <section id="componentThree" className={`component ${styles.three}`}>sections</section>
+      <section id="componentThree" className={`component ${styles.three}`}>
+          <div id='componentThreeCont' className={styles.componentThreeCont}>
+              <div id='cardContainer' className={styles.cardContainer}>
+                {portfolioCard}
+              </div>
+              <div className={styles.moreBtn}>
+                <a href=''>
+                  <button 
+                  className={styles.projectBtn}>
+                    View All
+                  </button>
+                </a>
+              </div>
+          </div>
+      </section>
+
+
+
       <section id="componentFour" className={`component ${styles.four}`}>sections</section>
     </section>
     </>
