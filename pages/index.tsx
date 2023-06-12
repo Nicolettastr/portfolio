@@ -3,8 +3,8 @@ import styles from '../styles/Home.module.css'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
-import VideoComponent from '../components/videoComponent'
-import { useEffect, useRef } from 'react'
+import Banner from '../components/banner'
+import { useEffect, useRef, useState } from 'react'
 import webImage from '../public/web.png'
 import canva from '../public/skills/canva.svg'
 import css from '../public/skills/css.svg'
@@ -31,7 +31,6 @@ import gsapLogo from '../public/skills/gsap.png'
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
   const containerRef = useRef(null);
-  const bgRef = useRef(null);
 
   const languages = [
     {
@@ -152,43 +151,6 @@ const Home = () => {
     )
   })
 
-  const images = [
-    {
-      id: 1,
-      name: '/netflix.png',
-      alt: 'Netflix clone',
-      skils: 'HTML, CSS, Javascript, React, Firebase, Stripe',
-      description: 'A Netflix-clone website project.'
-    },
-    {
-      id: 2,
-      name: '/donair.png',
-      alt: 'Donair',
-      skils: 'HTML, CSS, Javascript, React, Bootstrap',
-      description: 'Climate control, services and projects company.'
-    },
-    {
-      id: 3,
-      name: '/pethouse.png',
-      alt: 'Pethouse',
-      skils: 'HTML, CSS, Javascript, React, Bootstrap, Python, Flask, MySQL',
-      description: 'A Platform to search for hotels options for pets.'
-    }
-  ];
-
-  const imagesSection = images.map((item) => {
-    return (
-      <div key={item.id} className={`local ${styles.local}`}>
-        <div className={styles.localInner}>
-          <h2>{item.alt}</h2>
-          <div className={styles.localInfo}>
-            <p>{item.description}</p>
-          </div>
-        </div>
-      </div>
-    )
-  });
-
   const projectsSection = [
     {
       id:1,
@@ -232,23 +194,14 @@ const Home = () => {
 
   useEffect(() => {
     const components = document.querySelectorAll('.component')
-    const textElements = document.querySelectorAll('.textReveal')
     const componentOne = document.querySelector('#componentPrevOne')
     const componentOneImg = document.querySelector('#componentOneImg')
     const componentTwo = document.querySelector('#componentTwo')
-    const componentThree = document.querySelector('#componentThree')
     const componentThreeCont = document.querySelector('#componentThreeCont')
     const wrapper = document.querySelector('#wrapper')
     const componentTwoImg = document.querySelectorAll('.componentTwoImg')
-    const localElements = document.querySelectorAll('.local')
     const containerElement = containerRef.current;
-    const bgRefElement = bgRef.current;
-
-    let tl = gsap.timeline();
-    tl.from(bgRefElement, { scale: 0.5, duration: 2, opacity: 0, delay: 0.2 })
-      .to(textElements, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y: 0, stagger: 0.3, duration: 1 }, "-=0.9")
-      .to(localElements, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, stagger: .3, opacity: 1, duration: 1 }, '+=1')
-      
+    
 
     let main = gsap.to(components, {
       xPercent: -100 * (components.length - 1),
@@ -308,84 +261,73 @@ const Home = () => {
 
   return (
     <>
-    <section className='allContainer'>
-    <div ref={bgRef} className={styles.bg}>
-      <VideoComponent />
-      </div>
-      <div className={styles.banner}>
-        <div className={styles.bannerContent}>
-          <div className={styles.innerContent}>
-            <h1 className={`textReveal ${styles.textReveal}`}>Success <strong className={styles.not}>Is </strong>not</h1>
-            <h2 className={`textReveal ${styles.textReveal}`}>About <strong className={styles.not}>Being</strong> the best.</h2>
-            <h2  className={`textReveal ${styles.textReveal}`}>It is about being <strong><span className={styles.not}>Better</span></strong></h2>
-            <h2  className={`textReveal ${styles.textReveal}`}> <strong><span className={styles.not}>Than</span></strong> you were <strong><span className={styles.not}>Yesterday.</span></strong></h2>
-          </div>
-        </div>
-      </div>
+      <section className='allContainer'>
+        <Banner/>
+      </section>
 
-      <div id='projectsInfo' className={styles.locationsContainer}>
-          {imagesSection}
-      </div>
-    </section>
-      
-    <section ref={containerRef} id="container" className={styles.container}>
-      <div id="componentPrevOne" className={`component ${styles.prevone}`}>
-        <div id='wrapper' className={styles.wrapper}>
-        <h1 className={`${styles.textStatic}`}>{`I'm a`}</h1>
-          <ul className={`${styles.textDynamic}`}>
-            <li><span>Frontend Developer</span></li>
-            <li><span>Creative Coder</span></li>
-            <li><span>Tech Enthusiast</span></li>
-            <li><span>Problem Solver</span></li>
-            <li><span>Continuous Learner</span></li>
-          </ul>
-          <div className={styles.info}>
-            <p>My name is Nicole Struggia</p>
-            <p>A self-taught Frontend Developer. I am skilled in HTML, CSS, JavaScript and React.</p>
-            <p>I am always looking to expand my skills. One area of interest to me is 3D and animations. I am actively learning Three.js, Blender, and CSS animations.
-          </p>
+      <section ref={containerRef} id="container" className={styles.container}>
+        {/* section one */}
+        <section id="componentOne" className={`component componentOne ${styles.one}`}>
+          <div id="componentPrevOne" className={`${styles.prevone}`}>
+            <div id='wrapper' className={styles.wrapper}>
+              <h1 className={`${styles.textStatic}`}>{`I'm a`}</h1>
+                <ul className={`${styles.textDynamic}`}>
+                  <li><span>Frontend Developer</span></li>
+                  <li><span>Creative Coder</span></li>
+                  <li><span>Tech Enthusiast</span></li>
+                  <li><span>Problem Solver</span></li>
+                  <li><span>Continuous Learner</span></li>
+                </ul>
+                <div className={styles.info}>
+                  <p>My name is Nicole Struggia</p>
+                  <p>A self-taught Frontend Developer. I am skilled in HTML, CSS, JavaScript and React.</p>
+                  <p>I am always looking to expand my skills. One area of interest to me is 3D and animations. I am actively learning Three.js,       Blender, and CSS animations.
+                  </p>
+                </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <section id="componentOne" className={`component componentOne ${styles.one}`}>
           <figure className={styles.componentOneImage}>
-            <Image 
-            id='componentOneImg'
-            src={webImage} />
-          </figure>
-      </section>
-
-
-      <section id="componentTwo" className={`component ${styles.two}`}>
-        <section className={styles.sectionTwo}>
-          <div className={styles.mainContent}>
-            <h2>Languages</h2>
-            <div className={styles.skilssContent}>
-              {myLanguages}
-            </div>
-          </div>
-          <div className={styles.mainContent}>
-            <h2>Frameworks and Libraries</h2>
-            <div className={styles.skilssContent}>
-              {myFrameworksLibraries}
-            </div>
-          </div>
-          <div className={styles.mainContent}>
-            <h2>Tools</h2>
-            <div className={styles.skilssContent}>
-              {myTools}
-            </div>
-          </div>
+          <Image 
+          id='componentOneImg'
+          src={webImage} />
+        </figure>
         </section>
-      </section>
 
+         {/* section two */}
+        <section id="componentTwo" className={`component ${styles.two}`}>
+          <section className={styles.sectionTwo}>
+            <div className={styles.mainContent}>
+              <h2>Languages</h2>
+              <div className={styles.skilssContent}>
+                {myLanguages}
+              </div>
+            </div>
+            <div className={styles.mainContent}>
+              <h2>Frameworks and Libraries</h2>
+              <div className={styles.skilssContent}>
+                {myFrameworksLibraries}
+              </div>
+            </div>
+            <div className={styles.mainContent}>
+              <h2>Tools</h2>
+              <div className={styles.skilssContent}>
+                {myTools}
+              </div>
+            </div>
+          </section>
+        </section>
 
-      <section id="componentThree" className={`component ${styles.three}`}>
+        {/* section three */}
+        <section id="componentThree" className={`component ${styles.three}`}>
           <div id='componentThreeCont' className={styles.componentThreeCont}>
               <div id='cardContainer' className={styles.cardContainer}>
                 {portfolioCard}
               </div>
               <div className={styles.moreBtn}>
+                <h2>View</h2>
+                <h2>All</h2>
+                <h2>My</h2>
+                <h2>Projects</h2>
                 <a href=''>
                   <button 
                   className={styles.projectBtn}>
@@ -394,12 +336,14 @@ const Home = () => {
                 </a>
               </div>
           </div>
+        </section>
+
       </section>
 
+      <section className={styles.infoContainerSection}>
+        <h2 className={styles.prueba}>Contact me</h2>
+      </section>
 
-
-      <section id="componentFour" className={`component ${styles.four}`}>sections</section>
-    </section>
     </>
   )
 }

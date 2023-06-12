@@ -1,16 +1,40 @@
+.banner,
+.textDynamic li span::after,
+.locationsContainer,
+.projectsContainer::after,
+.local:before,
+.local:after  {
+  position: absolute; 
+}
+
+.banner,
+.skilssContent,
+.locationsContainer  {
+  display: grid;
+}
+
+.projectBtn,
+.local:after,
+.projectsContainer::after,
+.projectsContainer  {
+  border-radius: 0.3rem;
+}
+
 .banner {
-  position: absolute;
   top: -32%;
   height: 100vh;
   width: 100%;
-  display: grid;
   place-content: center;
 }
 
-.prevone {
+.prevone,
+.locationsContainer,
+.one,
+.two {
   width: 100vw;
-  height: 100vh;
-  background-color: black;
+}
+
+.prevone {
   overflow: hidden;
 }
 
@@ -25,7 +49,7 @@
 }
 
 .textStatic {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .textDynamic {
@@ -56,11 +80,9 @@
 
 .textDynamic li span::after {
   content: "";
-  position: absolute;
   left: 0;
   height: 100%;
   width: 100%;
-  background: black;
   border-left: 2px solid #97cba9;
   animation: textAppear 3s steps(20) infinite;
 }
@@ -74,21 +96,16 @@
 
 .info {
   color: rgb(192, 190, 190);
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: justify;
   padding: 0.5rem 2rem 0 0.3rem;
 }
 
-.one{
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(17, 17, 17, 0.322);
-  overflow: hidden;
+.info p {
+  margin-bottom: 0.3rem;
 }
 
 .two{
-  width: 100vw;
-  background-color: black;
   display: flex;
   align-items: center;
   padding-left: 1rem;
@@ -102,14 +119,17 @@
   opacity: 0;
 }
 
-.three{
+.three,
+.two, 
+.prevone,
+.three, 
+.four,
+.textDynamic li span::after {
   background-color: black;
 }
-.four{
-  background-color: chocolate;
-}
-.five{
-  background-color: cyan;
+
+.four {
+  color: white;
 }
 
 .bg {
@@ -165,10 +185,7 @@
 }
 
 .locationsContainer {
-  width: 100vw;
-  position: absolute;
   bottom: 0;
-  display: grid;
   grid-template-columns: auto;
   overflow-y: hidden;
   place-content: center;
@@ -190,7 +207,6 @@
 
 .local:before {
   content: '';
-  position: absolute;
   width: 100%;
   top: 0%;
   height: 100%;
@@ -199,11 +215,9 @@
 
 .local:after {
   content: "";
-  position: absolute;
   width: 50%;
   height: 5px;
   background: #97cba9;
-  border-radius: 0.3rem;
   top: 0;
   left: 0;
 }
@@ -224,6 +238,7 @@
 
 .localInfo {
   padding: 0 2rem;
+  overflow: hidden;
 }
 
 .localInfo p {
@@ -233,6 +248,7 @@
 .localInner h2 {
   font-size: 2.5rem;
   text-align: center;
+  overflow: hidden;
 }
 
 .local span {
@@ -253,8 +269,11 @@
 }
 
 .componentOneImage {
+  width: 100%;
+  height: 230px;
   overflow: hidden;
   margin: 0;
+  object-fit: cover;
 }
 
 .componentOneImage span {
@@ -262,7 +281,7 @@
 }
 
 .sectionTwo {
-  width: 80vw !important;
+  width: 100vw !important;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -287,7 +306,6 @@
 
 .skilssContent {
   height: fit-content;
-  display: grid;
   grid-template-columns: auto auto auto auto auto;
   overflow: hidden;
 }
@@ -298,17 +316,19 @@
   background: black;
   clip-path: polygon(100% 0, 86% 0, 86% 100%, 100% 100%);
   transition: all 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .projectsContainer {
-  width: 95%;
-  max-width: 280px;
-  height: 150px;
+  width: 80%;
+  height: 250px;
   margin: 0.5rem 0;
   padding: 0.5rem;
   background-color: #131518;
   color: white;
-  border-radius: 0.3rem;
   position: relative;
 }
 
@@ -316,10 +336,8 @@
   content: "";
   width: 45%;
   height: 5px;
-  position: absolute;
   top: 0;
   left: 0;
-  border-radius: 0.3rem;
   background: #97cba9;
 }
 
@@ -350,13 +368,56 @@
   height: 40px;
   background-color: #97cba9;
   border: none;
-  border-radius: 0.3rem;
   color: white;
   font-size: 1.2rem;
 }
 
 .cardBody a {
   text-decoration: none;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-left: 10%;
+}
+
+.moreBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5rem;
+}
+
+.moreBtn h2 {
+  font-size: 1.2rem;
+  color: #97cba9;
+  margin-left: 0.3rem;
+}
+
+.projectBtn {
+  width: 80px;
+  height: 30px;
+  font-size: 1rem;
+  margin-left: 0.3rem;
+}
+
+.infoContainerSection {
+  width: 100%;
+  height: 100vh;
+  background-color: blue;
+}
+
+@media (min-width: 500px) {
+  .moreBtn {
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  .projectsContainer {
+    height: 200px;
+    padding: 0.5rem 1rem;
+  }
 }
 
 @media (min-width: 600px) {
@@ -399,12 +460,13 @@
     height: 140px;
   }
 
-  .prevone {
-    width: 55vw;
+  .componentOneImage {
+    width: 50%;
+    height: 100vh;
   }
-  
-  .one{
-    width: 45vw;
+
+  .prevone {
+    width: 50%;
   }
 
   .skilssContent {
@@ -412,38 +474,48 @@
     display: flex;
   }
 
-  .cardContainer {
-    display: grid;
-    grid-template-columns: auto auto;
-  }
-
   .componentThreeCont {
     flex-direction: row;
-    justify-content: space-between;
   }
 
   .moreBtn {
-    width: 20%;
+    width: 35%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: end;
-    padding-bottom: 5rem;
+    flex-direction: column;
   }
 
-  .projectsContainer {
-    max-width: 350px;
-    height: 250px;
-    margin: 0.5rem 4rem;
-    padding: 0.5rem 1rem;
+  .moreBtn h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .moreBtn button {
+    width: 80%;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    max-width: 250px;
   }
 
   .cardBody {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
   }
 
   .projectBtn {
     margin-top: 1rem;
+  }
+
+  .projectsContainer {
+    width: 90%;
+    max-width: 280px;
+    height: 220px;
+  }
+
+  .cardContainer {
+    padding-left: 2%;
   }
 
 }
@@ -478,4 +550,35 @@
     overflow: hidden;
   }
 
+  .moreBtn {
+    padding-bottom: 5rem;
+  }
+
+  .moreBtn h2 {
+    font-size: 2rem;
+  }
+
+  .projectsContainer {
+    width: 95%;
+    margin-left: 2rem;
+  }
+
+  .cardContainer {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .moreBtn h2 {
+    font-size: 3.5rem;
+  }
+
+  .two {
+    padding-left: 1%;
+  }
+
+  .three {
+    padding-left: 1%;
+  }
 }

@@ -10,7 +10,8 @@
 
 body {
   width: 100vw;
-  background-image: linear-gradient(to top, #0c010c, #0b0109, #090006, #070004, #040002, #030001, #010000, #000000, #000000, #000000, #000000, #000000);
+  background-color: black !important;
+  overflow-x: hidden;
 }
 
 a {
@@ -23,19 +24,15 @@ a {
   height: 100vh;
 }
 
-.component>span {
-  width: 100vw !important;
-  height: 100vh !important;
-}
-
 #componentOne {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 #container{
   display: flex;
-  width:500vw;
+  width: 300vw !important;
 }
 
 #wrapper {
@@ -61,7 +58,6 @@ a {
   border-radius: 0.3rem;
   margin: 0.5rem;
 }
-
 svg {
   width: 1em;
   margin: 2em auto;
@@ -71,8 +67,10 @@ svg {
 
 .allContainer {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  
+  overflow: hidden !important;
 }
 
 video {
@@ -81,6 +79,14 @@ video {
   left: 0;
   width: 100%;
   overflow-y: hidden;
+}
+
+
+@media (min-width: 600px) {
+  #componentOne {
+    flex-direction: row;
+  }
+  
 }
 
 @media (min-width: 700px) {
