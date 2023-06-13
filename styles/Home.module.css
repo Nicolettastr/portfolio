@@ -17,7 +17,6 @@
 }
 
 .projectLink {
-  width: 100%;
   justify-content: end;
   text-decoration: none;
 }
@@ -25,8 +24,54 @@
 .bannerMainSection,
 .locationsContainer,
 .banner,
-.projectLink  {
+.projectLink,
+.moreBtn,
+.componentThreeCont,
+.mainContent,
+.sectionTwo,
+.localInner,
+.local,
+.two,
+.cardBody,
+.projectsContainer,
+.link {
   display: flex;
+}
+
+.localInner,
+.locationsContainer,
+.sectionTwo,
+.mainContent,
+.cardBody,
+.projectsContainer,
+.link,
+.componentThreeCont {
+  flex-direction: column;
+}
+
+.cardBody,
+.projectsContainer,
+.link,
+.componentThreeCont,
+.local,
+.componentThreeCont,
+.moreBtn  {
+  justify-content: center;
+  align-items: center;
+}
+
+.projectLink,
+.banner,
+.textDynamic li span::after ,
+.locationsContainer,
+.local,
+.localInner ,
+.componentOneImage,
+.componentThreeCont,
+.moreBtn, 
+.infoContainerSection,
+.mouse {
+  width: 100%;
 }
 
 .bannerContent {
@@ -41,17 +86,15 @@
   border-radius: 0.3rem;
 }
 
+.infoContainerSection,
 .banner {
-  top: -32%;
   height: 100vh;
-  width: 100%;
-  justify-content: start;
-  align-items: center;
 }
 
-
-.locationsContainer {
-  width: 30%;
+.banner {
+  top: -32%;
+  justify-content: start;
+  align-items: center;
 }
 
 .prevone,
@@ -60,7 +103,18 @@
   width: 100vw;
 }
 
-.prevone {
+.prevone, 
+.textDynamic,
+.textDynamic li,
+.local, 
+.localInfo, 
+.localInner h2, 
+.componentOneImage,
+.sectionTwo h2, 
+.skilssContent, 
+.componentThreeCont,
+.projectTtitle,
+.cardBody p  {
   overflow: hidden;
 }
 
@@ -82,7 +136,6 @@
   padding: 0;
   line-height: 40px;
   height: 40px;
-  overflow: hidden;
 }
 
 .textDynamic li {
@@ -91,7 +144,6 @@
   position: relative;
   top: 0;
   animation: textChanging 15s steps(5) infinite;
-  overflow: hidden;
 }
 
 @keyframes textChanging {
@@ -108,7 +160,6 @@
   content: "";
   left: 0;
   height: 100%;
-  width: 100%;
   border-left: 2px solid #08B39C;
   animation: textAppear 3s steps(20) infinite;
 }
@@ -132,13 +183,12 @@
 }
 
 .two{
-  display: flex;
   align-items: center;
   padding-left: 1rem;
   background: url('../public/siete.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;
+  background-position: bottom right;
 }
 
 .square {
@@ -207,29 +257,20 @@
 
 .locationsContainer {
   bottom: 0;
-  grid-template-columns: auto;
   overflow-y: hidden;
-  place-content: center;
 }
 
+
 .local {
-  width: 30%;
   height: 110px;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   opacity: 0;
   transform: translateY(2em);
-  overflow: hidden !important;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .localInner {
-  width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   transition: all 2s;
@@ -240,7 +281,6 @@
 
 .localInfo {
   padding: 0 2rem;
-  overflow: hidden;
 }
 
 .localInfo p {
@@ -248,11 +288,12 @@
   color: white;
 }
 
+
 .localInner h2 {
   font-size: 2.5rem;
   text-align: center;
-  overflow: hidden;
   color: #11afee;
+  margin: 0;
 }
 
 .local span {
@@ -270,9 +311,7 @@
 }
 
 .componentOneImage {
-  width: 100%;
   height: 230px;
-  overflow: hidden;
   margin: 0;
   object-fit: cover;
 }
@@ -284,15 +323,13 @@
 .sectionTwo {
   width: 100vw !important;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   padding: 3rem 0 3rem 0;
 }
+
 
 .sectionTwo h2 {
   color: #08B39C;
   padding-bottom: 0.5rem;
-  overflow: hidden;
   font-weight: 600;
   position: relative;
   transition: all 2s;
@@ -300,27 +337,20 @@
 
 .mainContent {
   height: 100%;
-  display: flex;
-  flex-direction: column;
   padding-right: 1rem;
 }
 
 .skilssContent {
   height: fit-content;
   grid-template-columns: auto auto auto auto auto;
-  overflow: hidden;
 }
 
+
 .componentThreeCont {
-  width: 100%;
   height: 100%;
   background: black;
   clip-path: polygon(100% 0, 86% 0, 86% 100%, 100% 100%);
   transition: all 1s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .projectsContainer {
@@ -342,26 +372,8 @@
   background: #0CA2DD;
 }
 
-.cardBody,
-.projectsContainer,
-.link,
-.componentThreeCont {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.projectTtitle {
-  overflow: hidden;
-}
-
 .cardBody {
   font-size: 1.1rem;
-}
-
-.cardBody p {
-  overflow: hidden;
 }
 
 .projectBtn {
@@ -383,10 +395,8 @@
   padding-left: 10%;
 }
 
+
 .moreBtn {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   padding-bottom: 5rem;
 }
 
@@ -406,193 +416,12 @@
 }
 
 .infoContainerSection {
-  width: 100%;
-  height: 100vh;
   background-color: blue;
 }
 
 .mouse {
   padding-top: 2rem;
-  width: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   transition: all 1.5s;
   transform: translateY(0);
-}
-
-@media (min-width: 500px) {
-  .moreBtn {
-    margin-top: 1rem;
-    padding: 0;
-  }
-
-  .projectsContainer {
-    height: 200px;
-    padding: 0.5rem 1rem;
-  }
-}
-
-@media (min-width: 600px) {
-  .banner {
-    top: -18%;
-  }
-
-  .innerContent h1,
-  .innerContent h2 {
-    font-size: 2rem;
-    font-weight: lighter;
-  }
-
-  .innerContent h1:nth-child(1){
-    font-size: 2.5rem ;
-    text-align: start;
-  }
-  
-  .innerContent h2:nth-child(2){
-    font-size: 2.8rem ;
-  }
-
-  .innerContent h2:nth-child(3){
-    font-size: 2rem ;
-    text-align: center;
-  }
-  
-  .innerContent h2:nth-child(4){
-    font-size: 3rem ;
-  }
-
-  .locationsContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    bottom: 25%;
-  }
-
-  .local {
-    width: 35%;
-    max-width: none;
-    height: 130px;
-  }
-
-  .componentOneImage {
-    width: 50%;
-    height: 100vh;
-  }
-
-  .prevone {
-    width: 50%;
-  }
-
-  .skilssContent {
-    height: fit-content;
-    display: flex;
-  }
-
-  .componentThreeCont {
-    flex-direction: row;
-  }
-
-  .moreBtn {
-    width: 35%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .moreBtn h2 {
-    font-size: 2rem;
-    font-weight: 600;
-  }
-
-  .moreBtn button {
-    width: 80%;
-    height: 50px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    max-width: 250px;
-  }
-
-  .cardBody {
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
-
-  .projectBtn {
-    margin-top: 1rem;
-  }
-
-  .projectsContainer {
-    width: 90%;
-    max-width: 280px;
-    height: 220px;
-  }
-
-  .cardContainer {
-    padding-left: 2%;
-  }
-
-}
-
-@media (min-width: 700px) {
-
-  .innerContent h1:nth-child(1){
-    font-size: 2.8rem ;
-    text-align: start;
-  }
-  
-  .innerContent h2:nth-child(2){
-    font-size: 3rem ;
-  }
-
-  .innerContent h2:nth-child(3){
-    font-size: 1.8rem ;
-    text-align: center;
-  }
-  
-  .innerContent h2:nth-child(4){
-    font-size: 3rem ;
-  }
-
-  .textDynamic {
-    font-size: 2.7rem;
-    overflow: hidden;
-  }
-  
-  .textStatic {
-    font-size: 4.5rem;
-    overflow: hidden;
-  }
-
-  .moreBtn {
-    padding-bottom: 5rem;
-  }
-
-  .moreBtn h2 {
-    font-size: 2rem;
-  }
-
-  .projectsContainer {
-    width: 95%;
-    margin-left: 2rem;
-  }
-
-  .cardContainer {
-    padding-left: 4%;
-    padding-right: 4%;
-  }
-}
-
-@media (min-width: 1000px) {
-  .moreBtn h2 {
-    font-size: 3.5rem;
-  }
-
-  .two {
-    padding-left: 1%;
-  }
-
-  .three {
-    padding-left: 1%;
-  }
 }

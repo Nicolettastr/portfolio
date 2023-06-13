@@ -353,7 +353,6 @@ const Home = () => {
               </div>
           </div>
         </section>
-
       </section>
 
       <section className={styles.infoContainerSection}>
