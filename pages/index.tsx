@@ -12,7 +12,7 @@ import figma from '../public/skills/figma.svg'
 import flask from '../public/skills/flask.svg'
 import git from '../public/skills/git.svg'
 import github from '../public/skills/github.svg'
-import gpt from '../public/skills/gpt.svg'
+import gpt from '../public/skills/chatgpt.svg'
 import html from '../public/skills/html.svg'
 import javascript from '../public/skills/javascript.svg'
 import nextjs from '../public/skills/nextjs.svg'
@@ -26,7 +26,7 @@ import trello from '../public/skills/trello.svg'
 import vercel from '../public/skills/vercel.svg'
 import blender from '../public/skills/blender.svg'
 import threejs from '../public/skills/threejs.svg'
-import gsapLogo from '../public/skills/gsap.png'
+import gsapLogo from '../public/skills/gsap.svg'
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -59,14 +59,6 @@ const Home = () => {
     },
   ]
 
-  const myLanguages = languages.map((item, index) => {
-    return (
-      <div key={index} className={`componentTwoImg ${styles.icons}`}>
-        <Image src={item.icon.src} width={50} height={50}/>
-      </div>
-    )
-  })
-
   const frameworksLibraries = [
     {
       name: 'Flask',
@@ -89,15 +81,6 @@ const Home = () => {
       icon: blender
     },
   ]
-
-  
-  const myFrameworksLibraries = frameworksLibraries.map((item, index) => {
-    return (
-      <div key={index} className={`componentTwoImg ${styles.icons}`}>
-        <Image src={item.icon.src} width={50} height={50}/>
-      </div>
-    )
-  })
 
   const tools = [
     {
@@ -142,6 +125,22 @@ const Home = () => {
     },
 
   ]
+
+  const myLanguages = languages.map((item, index) => {
+    return (
+      <div key={index} className={`componentTwoImg ${styles.icons}`}>
+        <Image src={item.icon.src} width={50} height={50}/>
+      </div>
+    )
+  })
+  
+  const myFrameworksLibraries = frameworksLibraries.map((item, index) => {
+    return (
+      <div key={index} className={`componentTwoImg ${styles.icons}`}>
+        <Image src={item.icon.src} width={50} height={50}/>
+      </div>
+    )
+  })
 
   const myTools = tools.map((item, index) => {
     return (
@@ -192,16 +191,23 @@ const Home = () => {
     )
   })
 
+  const bgRef = useRef(null);
+  const bgRefElement = bgRef.current;
+
   useEffect(() => {
     const components = document.querySelectorAll('.component')
     const componentOne = document.querySelector('#componentPrevOne')
     const componentOneImg = document.querySelector('#componentOneImg')
     const componentTwo = document.querySelector('#componentTwo')
+    const componentThree = document.querySelector('#componentThree')
     const componentThreeCont = document.querySelector('#componentThreeCont')
     const wrapper = document.querySelector('#wrapper')
     const componentTwoImg = document.querySelectorAll('.componentTwoImg')
+    const moreBtnH2 = document.querySelectorAll('.moreBtnH2')
     const containerElement = containerRef.current;
     
+    let tl = gsap.timeline();
+    tl.from(bgRefElement, { opacity: 0, scale: 1, duration: 2, delay: 0.2 })
 
     let main = gsap.to(components, {
       xPercent: -100 * (components.length - 1),
@@ -257,11 +263,21 @@ const Home = () => {
     }).to(componentThreeCont, {clipPath: "polygon(100% 0, 0 0, 0 100%, 100% 100%)"}
     )
 
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: componentThree,
+        start: "left left",
+        end: "rigth left",
+        scrub: true,
+        containerAnimation: main,
+      }
+    }).to(moreBtnH2, {opacity: 1})
+
   }, [])
 
   return (
     <>
-      <section className='allContainer'>
+      <section ref={bgRefElement} className='allContainer'>
         <Banner/>
       </section>
 
@@ -324,10 +340,10 @@ const Home = () => {
                 {portfolioCard}
               </div>
               <div className={styles.moreBtn}>
-                <h2>View</h2>
-                <h2>All</h2>
-                <h2>My</h2>
-                <h2>Projects</h2>
+                <h2 className='moreBtnH2'>View</h2>
+                <h2 className='moreBtnH2'>All</h2>
+                <h2 className='moreBtnH2'>My</h2>
+                <h2 className='moreBtnH2'>Projects</h2>
                 <a href=''>
                   <button 
                   className={styles.projectBtn}>
