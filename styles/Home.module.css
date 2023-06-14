@@ -62,10 +62,13 @@
 .link,
 .componentThreeCont,
 .local,
-.componentThreeCont,
-.moreBtn  {
+.componentThreeCont {
   justify-content: center;
   align-items: center;
+}
+
+.moreBtn {
+  justify-content: flex-start;
 }
 
 .projectLink,
