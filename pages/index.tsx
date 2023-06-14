@@ -131,7 +131,7 @@ const Home = () => {
   const myLanguages = languages.map((item, index) => {
     return (
       <div key={index} className={`componentTwoImg ${styles.icons}`}>
-        <Image src={item.icon.src} width={50} height={50} alt='icon'/>
+        <Image src={item.icon.src} width={50} height={50} alt={`${item.name} icon`}/>
       </div>
     )
   })
@@ -139,7 +139,7 @@ const Home = () => {
   const myFrameworksLibraries = frameworksLibraries.map((item, index) => {
     return (
       <div key={index} className={`componentTwoImg ${styles.icons}`}>
-        <Image src={item.icon.src} width={50} height={50} alt='icon'/>
+        <Image src={item.icon.src} width={50} height={50} alt={`${item.name} icon`}/>
       </div>
     )
   })
@@ -276,7 +276,7 @@ const Home = () => {
 
   return (
     <>
-      <section ref={bgRefElement} className='allContainer'>
+      <section ref={bgRef} className='allContainer'>
         <Banner/>
       </section>
 
