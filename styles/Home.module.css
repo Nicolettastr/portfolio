@@ -62,13 +62,21 @@
 .link,
 .componentThreeCont,
 .local,
-.componentThreeCont {
+.componentThreeCont,
+.moreBtn {
   justify-content: center;
   align-items: center;
 }
 
-.moreBtn {
-  justify-content: flex-start;
+.fade {
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(180deg,
+  transparent,
+  rgba(2, 2, 2, 0.5),
+  #020202);
+  position: absolute;
+    bottom: 0;
 }
 
 .projectLink,
@@ -119,6 +127,7 @@
 .textDynamic li,
 .local, 
 .localInfo, 
+.localInner,
 .localInner h2, 
 .componentOneImage,
 .sectionTwo h2, 
@@ -126,7 +135,7 @@
 .componentThreeCont,
 .projectTtitle,
 .cardBody p  {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .textStatic,
@@ -352,17 +361,19 @@
 .componentThreeCont {
   height: 100%;
   background: black;
-  clip-path: polygon(100% 0, 86% 0, 86% 100%, 100% 100%);
   transition: all 1s;
 }
 
 .projectsContainer {
-  width: 80%;
+  width: 92%;
   height: 250px;
   margin: 0.5rem 0;
   padding: 0.5rem;
   background-color: #131518;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .projectsContainer::after {
@@ -374,8 +385,10 @@
   background: #0CA2DD;
 }
 
-.cardBody {
-  font-size: 1.1rem;
+.cardBody p {
+  height: 105px;
+  margin: 0;
+  font-size: 1rem;
 }
 
 .projectBtn {
@@ -394,7 +407,7 @@
 .cardContainer {
   display: grid;
   grid-template-columns: auto auto;
-  padding-left: 10%;
+  padding-left: 5%;
 }
 
 
@@ -435,10 +448,14 @@
     margin-top: 1rem;
     padding: 0;
   }
-
+  
   .projectsContainer {
     height: 200px;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
+  }
+
+  .cardBody p {
+    height: 80px;
   }
 
   .two{
@@ -513,6 +530,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .moreBtn h2 {
@@ -521,7 +539,7 @@
   }
 
   .moreBtn button {
-    width: 80%;
+    width: 200px;
     height: 50px;
     font-size: 1.2rem;
     font-weight: 600;

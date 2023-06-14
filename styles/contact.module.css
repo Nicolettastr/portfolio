@@ -1,0 +1,186 @@
+.hireMe {
+    transition: all 1s;
+    font-size: 4rem;
+    font-weight: 600;
+    color: rgb(65, 64, 64);
+    padding-left: 2rem;
+    padding-top: 1rem;
+    overflow: hidden;
+}
+
+.contactSectionBg {
+    width: 100vw;
+    height: 100vh;
+    background: url('../public/ocho.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    display: flex;
+}
+
+.allContact {
+    width: 100%;
+    overflow: hidden;
+}
+
+.socialNetwork {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    background: url('../public/cero.png');
+}
+
+.divsection {
+    display: flex;
+}
+
+.inputContainerSection,
+.textAreaContainer {
+    width: 100%;
+}
+
+.formSection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2.5rem;
+    transition: all 1.7s;
+}
+
+.inputContainer {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.textAreaContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.textAreaContainer label,
+.inputContainer label {
+    color: #11afee;
+    padding: 1rem 0 0.4rem 0;
+    font-size: 1.2rem;
+}
+
+.inputContainer input,
+.textAreaContainer textarea {
+    width: 80%;
+    height: 45px;
+    border-radius: 0.3rem;
+    border: none;
+    padding: 1rem;
+    background-color: rgb(238, 236, 236);
+}
+
+.textAreaContainer textarea:focus  {
+    outline: none;
+}
+
+.textAreaContainer textarea {
+    height: 110px;
+}
+
+
+.inputContainer input:focus {
+    outline: none;
+}
+
+.buttonContainer {
+    width: 80%;
+    display: flex;
+    padding: 1.5rem 0;
+    transition: all 2.5s;
+}
+
+.buttonContainer button {
+    width: 250px;
+    height: 50px;
+    border-radius: 0.3rem;
+    background: #11afee;
+    border: none;
+    font-size: 1.2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hexagon,
+.hexagon2 {
+    background: #11afee;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+}
+
+.hexagon {
+    width: 130px;
+    height: 130px;
+    rotate: -5deg;
+}
+
+.hexagon2 {
+    width: 155px;
+    height: 155px;
+    rotate: 11deg;
+}
+
+.hexagon span,
+.hexagon2 span {
+    width: 110px;
+    height: 110px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hexagon img,
+.hexagon2 img {
+    width: 100px !important;
+}
+
+@media (min-width: 500px) {
+    .hireMe {
+        font-size: 5rem;
+        padding-top: 0;
+    }
+
+    .inputContainer {
+        width: 100%;
+    }
+
+    .buttonContainer {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 1.5rem 4rem ;
+    }
+
+}
+
+@media (min-width: 800px) {
+    .hireMe {
+        font-size: 7rem;
+    }
+
+    .inputContainerSection,
+    .textAreaContainer {
+    width: 70%;
+    }
+
+    .textAreaContainer textarea {
+        height: 120px;
+    }
+}

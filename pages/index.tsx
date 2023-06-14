@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
 import Banner from '../components/banner'
+import Contact from '../components/contact'
 import { useEffect, useRef } from 'react'
 import webImage from '../public/web.png'
 import canva from '../public/skills/canva.svg'
@@ -248,7 +249,7 @@ const Home = () => {
         scrub: true,
         containerAnimation: main,
       }
-    }).from(componentTwoImg, { rotate: 45, scale: 0})
+    }).from(componentTwoImg, { rotate: 45, scale: 0, x: 400})
 
     gsap.timeline({
       scrollTrigger: {
@@ -257,11 +258,10 @@ const Home = () => {
         end: 'left left',
         scrub: true,
         containerAnimation: main,
-        markers: true,
       }
-    }).to(componentThreeCont, {clipPath: "polygon(100% 0, 0 0, 0 100%, 100% 100%)"}
-    )
-
+    }).fromTo(componentThreeCont, {opacity: 0, scale: 1.5}, 
+                                  {opacity: 1, scale: 1}, '-=1')
+          
     gsap.timeline({
       scrollTrigger: {
         trigger: componentThree,
@@ -270,7 +270,7 @@ const Home = () => {
         scrub: true,
         containerAnimation: main,
       }
-    }).to(moreBtnH2, {opacity: 1})
+    }).fromTo(moreBtnH2, {opacity: 0, scale: 1.5}, {opacity: 1, scale: 1})
 
   }, [])
 
@@ -278,6 +278,7 @@ const Home = () => {
     <>
       <section ref={bgRef} className='allContainer'>
         <Banner/>
+        <div className={styles.fade}></div>
       </section>
 
       <section ref={containerRef} id="container" className={styles.container}>
@@ -356,7 +357,7 @@ const Home = () => {
       </section>
 
       <section className={styles.infoContainerSection}>
-        <h2 className={styles.prueba}>Contact me</h2>
+        <Contact/>
       </section>
 
     </>
