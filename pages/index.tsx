@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
 import Banner from '../components/banner'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import webImage from '../public/web.png'
 import canva from '../public/skills/canva.svg'
 import css from '../public/skills/css.svg'
@@ -31,6 +31,8 @@ import gsapLogo from '../public/skills/gsap.svg'
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
   const containerRef = useRef(null);
+  const bgRef = useRef(null);
+  const bgRefElement = bgRef.current;
 
   const languages = [
     {
@@ -129,7 +131,7 @@ const Home = () => {
   const myLanguages = languages.map((item, index) => {
     return (
       <div key={index} className={`componentTwoImg ${styles.icons}`}>
-        <Image src={item.icon.src} width={50} height={50}/>
+        <Image src={item.icon.src} width={50} height={50} alt='icon'/>
       </div>
     )
   })
@@ -137,7 +139,7 @@ const Home = () => {
   const myFrameworksLibraries = frameworksLibraries.map((item, index) => {
     return (
       <div key={index} className={`componentTwoImg ${styles.icons}`}>
-        <Image src={item.icon.src} width={50} height={50}/>
+        <Image src={item.icon.src} width={50} height={50} alt='icon'/>
       </div>
     )
   })
@@ -190,9 +192,6 @@ const Home = () => {
       </div>
     )
   })
-
-  const bgRef = useRef(null);
-  const bgRefElement = bgRef.current;
 
   useEffect(() => {
     const components = document.querySelectorAll('.component')
@@ -305,7 +304,8 @@ const Home = () => {
           <figure className={styles.componentOneImage}>
           <Image 
           id='componentOneImg'
-          src={webImage} />
+          src={webImage}
+          alt='imagen propia' />
         </figure>
         </section>
 

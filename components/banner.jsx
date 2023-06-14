@@ -1,5 +1,5 @@
 'use client'
-import {useRef, useEffect} from 'react'
+import {useEffect} from 'react'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import gsap from 'gsap'
@@ -68,7 +68,7 @@ const Banner = () => {
     return (
         <>
         <div  className={styles.bgImage}>
-          <Image src={spark} />
+          <Image src={spark} alt='fondo de estrellas'/>
         </div>
         <section className={styles.bannerMainSection}>
         <div className={styles.banner}>
@@ -84,6 +84,7 @@ const Banner = () => {
                     src={mouse}
                     width={50}
                     height={50}
+                    alt='mouse'
                     />
                 </figure>
             </div>
