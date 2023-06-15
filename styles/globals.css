@@ -98,6 +98,9 @@ video {
   overflow-y: hidden;
 }
 
+.hexagonAnimation {
+  transition: all 2s;
+}
 
 @media (min-width: 600px) {
   #componentOne {

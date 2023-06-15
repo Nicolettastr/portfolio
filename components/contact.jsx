@@ -12,12 +12,11 @@ const Contact = () => {
 
     useEffect(() => {
 
-        const contactSection = document.querySelector('#contactSection')
-        const divsection = document.querySelector('#divsection')
+        const contactSection = document.querySelector('#divsection')
         const contactContainer = document.querySelector('.hireMe')
         const formSection = document.querySelector('#formSection')
         const buttonId = document.querySelector('#button')
-        const hexagon = document.querySelectorAll('.hexagon')
+        const hexagons = document.querySelectorAll('.hexagonAnimation')
 
         gsap.timeline({
             scrollTrigger: {
@@ -46,29 +45,41 @@ const Contact = () => {
             }
           }).fromTo(buttonId, { x: 400, opacity: 0} , {x:0, opacity: 1 } )
 
-    })
+          
+          gsap.timeline({
+            scrollTrigger: {
+                trigger: contactSection,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true,
+            }
+          }).fromTo(hexagons, { scale: 0} , {scale:1, duration: 2} )
+
+    }, [])
 
     return (
         <div id="divsection" className={styles.divsection}>
         <section id="contactSection" className={styles.contactSectionBg}>
             <div className={styles.allContact}>
-            <div>
-                <h2 id="contactContainer" className={`hireMe ${styles.hireMe}`}>Hire Me</h2>
+            <div id="contactContainer" >
+                <h2 className={`hireMe ${styles.hireMe}`}>Hire Me</h2>
             </div>
-            <form id="formSection" action="" className={styles.formSection}>
+            <form id="formSection"  action="https://formsubmit.co/nicolettastruggia@hotmail.com" method="POST" className={styles.formSection}>
                 <div className={styles.inputContainerSection}>
                     <div className={styles.inputContainer}>
-                        <label htmlFor="">Name</label>
+                        <label htmlFor="Name">Name</label>
                         <input type="text" placeholder="Name" />
                     </div>
                     <div className={styles.inputContainer}>
-                        <label htmlFor="">Email</label>
-                        <input type="text" placeholder="Email" />
+                        <label htmlFor="Email">Email</label>
+                        <input type="email" name="email" placeholder="Email Address"/>
                     </div>
                 </div>
                 <div className={styles.textAreaContainer}>
-                    <label htmlFor="">Message</label>
+                    <label htmlFor="Message">Message</label>
                     <textarea type="text" placeholder="Message" />
+                    <input type="hidden" name="_captcha" value="false"/>
+                    <input type="hidden" name="_next" value="http://localhost:3000/thankyou"/>
                 </div>
                 <div id="button" className={styles.buttonContainer}> 
                 <button type="Submit">Submit</button>
@@ -78,15 +89,15 @@ const Contact = () => {
         </section>
         
         <section className={styles.socialNetwork}>
-            <div className={`hexagon ${styles.hexagon}`}>
-                <span>
+            <div className={`hexagonAnimation ${styles.hexagon}`}>
+                <a href="https://www.linkedin.com/in/nicole-struggia/" rel="noreferrer" target="_blank">
                     <Image src={linkedin} alt='linkedin link'/>
-                </span>
+                </a>
             </div>
-            <div className={`hexagon ${styles.hexagon2}`}>
-                <span>
+            <div className={`hexagonAnimation ${styles.hexagon2}`}>
+                <a href="https://github.com/Nicolettastr" target="_blank" rel="noreferrer">
                     <Image src={github} alt='github link'/>
-                </span>
+                </a>
             </div>
         </section>
         </div>

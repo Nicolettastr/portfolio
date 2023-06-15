@@ -135,8 +135,8 @@
     rotate: 11deg;
 }
 
-.hexagon span,
-.hexagon2 span {
+.hexagon a,
+.hexagon2 a {
     width: 110px;
     height: 110px;
     background: white;
