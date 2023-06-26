@@ -22,9 +22,9 @@ const NavbarComponent = () => {
                 className={`me-auto my-2 my-lg-0 ${styles.navbar_optionsContainer}`}
                   navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="#action2">About Me</Nav.Link>
-                <Nav.Link href="#action2">Projects</Nav.Link>
+                <Nav.Link href="projects">Projects</Nav.Link>
                 <Nav.Link href="#action2">Resume</Nav.Link>
                 <Nav.Link href="#action2">Future</Nav.Link>
               </Nav>

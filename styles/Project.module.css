@@ -1,0 +1,52 @@
+.projectsSection {
+    background: url('../public/cero.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.projectsSectionB {
+    background: url('../public/siete.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.projectsSection,
+.projectsSectionB,
+.projectsInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectsInfo {
+    margin: 2rem 0;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    padding: 2rem 0.5rem;
+}
+
+@media (min-width: 700px) {
+    .projectsInfo {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .projectsSection {
+        background-position: right bottom;
+    }
+    
+    .projectsSectionB {
+        background-position: left top;
+    }
+}
+
+@media (min-width: 900px) {
+    .projectsInfo {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}

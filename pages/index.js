@@ -5,6 +5,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
 import Banner from '../components/banner'
 import Contact from '../components/contact'
+import ProjectCard from '../components/projectCard'
 import { useEffect, useRef } from 'react'
 import webImage from '../public/web.png'
 import canva from '../public/skills/canva.svg'
@@ -178,21 +179,7 @@ const Home = () => {
       link: 'https://netflix-clone-a3f34.web.app/',
       description: 'Stunning Netflix website replica'
     },
-  ];
-
-  const portfolioCard = projectsSection.map((item) => {
-    return (
-      <div key={item.id} className={styles.projectsContainer}>
-        <h2 className={styles.projectTtitle}>{item.name}</h2>
-        <div className={styles.cardBody}>
-          <p>{item.description}</p>
-          <a target="_blank" rel="noreferrer" className={styles.link} href={item.link} >
-            <button className={styles.projectBtn}>View</button>
-          </a>
-        </div>
-      </div>
-    )
-  })
+  ]
 
   useEffect(() => {
     const components = document.querySelectorAll('.component')
@@ -338,7 +325,7 @@ const Home = () => {
         <section id="componentThree" className={`component ${styles.three}`}>
           <div id='componentThreeCont' className={styles.componentThreeCont}>
               <div id='cardContainer' className={styles.cardContainer}>
-                {portfolioCard}
+                <ProjectCard projects={projectsSection}/>
               </div>
               <div className={styles.moreBtn}>
                 <h2 className='moreBtnH2'>View</h2>

@@ -12,7 +12,7 @@ const Contact = () => {
 
     useEffect(() => {
 
-        const contactSection = document.querySelector('#divsection')
+        const contactSection = document.querySelector('.principalContactSection')
         const contactContainer = document.querySelector('.hireMe')
         const formSection = document.querySelector('#formSection')
         const buttonId = document.querySelector('#button')
@@ -58,7 +58,7 @@ const Contact = () => {
     }, [])
 
     return (
-        <div id="divsection" className={styles.divsection}>
+        <div className={`principalContactSection ${styles.divsection}`}>
         <section id="contactSection" className={styles.contactSectionBg}>
             <div className={styles.allContact}>
             <div id="contactContainer" >
