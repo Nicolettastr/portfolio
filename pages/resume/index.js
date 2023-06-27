@@ -1,8 +1,7 @@
 import me from '../../public/me/me.png'
 import Image from 'next/image';
 import styles from '../../styles/Resume.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from '@fortawesome/free-regular-svg-icons';
+import cv from '../../public/cv/cv.png'
 
 const Resume = () => {
 
@@ -110,7 +109,7 @@ const Resume = () => {
              <p className='about'>RESUME</p>
              <button className={styles.resumeBtn}>
                 <a href='/cv/nicole.pdf' download='Nicole Struggia Curriculum.pdf'>
-                    <FontAwesomeIcon icon={faCircle} className={styles.icon} />
+                    <Image src={cv} width={30} height={30}/>
                 </a>
              </button>
              <section className={styles.resumenContainer}>

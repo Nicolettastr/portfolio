@@ -43,6 +43,7 @@
     font-size: 1.2rem;
     display: flex;
     justify-content: center;
+    transition: all 2s;
 }
 
 .titleSection .imageCont {
@@ -51,6 +52,7 @@
 
 .titleSectionCont {
     width: 100%;
+    transition: all 2s;
 }
 
 .skillsContainer {

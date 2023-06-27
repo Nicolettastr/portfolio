@@ -210,8 +210,8 @@
 }
 
 .resumeBtn {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background: #88c7a7;
     border-radius: 0.3rem;
     border: none;
@@ -221,8 +221,10 @@
     overflow: hidden;
 }
 
-.icon {
-    color: white;
+.resumeBtn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 600px) {
