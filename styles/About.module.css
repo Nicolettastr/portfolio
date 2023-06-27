@@ -1,0 +1,106 @@
+.title {
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.title h2 {
+    font-size: 3.2rem;
+    color: white;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitle {
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.titleSection {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subtitle h2 {
+    color: #0fc29b;
+    font-size: 3rem;
+}
+
+.info {
+    width: 100%;
+    text-align: justify;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.747);
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.titleSection .imageCont {
+    max-width: 400px;
+}
+
+.titleSectionCont {
+    width: 100%;
+}
+
+.skillsContainer {
+    padding: 0 1rem;
+}
+
+.skills {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.87);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+}
+
+.skills span {
+    margin: 0 0.4rem !important;
+}
+
+.skillsContainer h2 {
+    color: rgba(255, 255, 255, 0.705);
+}
+
+@media (min-width: 500px) {
+    .title h2 {
+        font-size: 3.4rem;
+    }
+}
+
+@media (min-width: 700px) {
+    .titleSection {
+        flex-direction: row;
+    }
+}
+
+
+@media (min-width: 900px) {
+    .title h2 {
+        font-size: 3.4rem;
+        padding-right: 1rem;
+    }
+
+    .title {
+        display: flex;
+    }   
+
+    .info p {
+        width: 65%;
+        padding: 2rem 0;
+    }
+}

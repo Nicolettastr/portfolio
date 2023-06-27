@@ -23,10 +23,10 @@ const NavbarComponent = () => {
                   navbarScroll
               >
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="#action2">About Me</Nav.Link>
+                <Nav.Link href="about">About Me</Nav.Link>
                 <Nav.Link href="projects">Projects</Nav.Link>
-                <Nav.Link href="#action2">Resume</Nav.Link>
-                <Nav.Link href="#action2">Future</Nav.Link>
+                <Nav.Link href="resume">Resume</Nav.Link>
+                <Nav.Link href="future">Future</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>

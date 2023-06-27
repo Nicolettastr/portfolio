@@ -102,6 +102,13 @@ video {
   transition: all 2s;
 }
 
+.about {
+  width: 100%;
+  text-decoration: underline;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.788);
+}
+
 @media (min-width: 600px) {
   #componentOne {
     flex-direction: row;

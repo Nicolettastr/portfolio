@@ -104,6 +104,7 @@ const Projects = () => {
 
     return (
         <section className={styles.container}>
+            <p className='about'>PROJECTS</p>
             <section className={styles.projectsSection}>
                 <h2 className={styles.title}>Masterworks: Showcasing My Finest Creations and Achievements</h2>
                 <div className={styles.projectsInfo}>
