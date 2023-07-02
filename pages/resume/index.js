@@ -1,9 +1,20 @@
+'use client'
+import { useEffect, useState } from 'react';
 import me from '../../public/me/me.png'
 import Image from 'next/image';
 import styles from '../../styles/Resume.module.css'
 import cv from '../../public/cv/cv.png'
+import Loading from '../../components/loading'
 
 const Resume = () => {
+
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setTimeout(() => {
+        setLoading(false);
+    }, 3000)
+    });
 
     const projects = [
         {
@@ -105,6 +116,8 @@ const Resume = () => {
     ]
 
     return (
+        <>
+        { loading ? <Loading/> : 
         <section className={styles.resumePage}>
              <p className='about'>RESUME</p>
              <button className={styles.resumeBtn}>
@@ -234,6 +247,8 @@ const Resume = () => {
 
             </section>
         </section>
+        }
+        </>
     )
 };
 

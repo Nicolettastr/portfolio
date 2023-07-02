@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Banner from '../components/banner'
 import Contact from '../components/contact'
 import ProjectCard from '../components/projectCard'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import webImage from '../public/web.png'
 import canva from '../public/skills/canva.svg'
 import css from '../public/skills/css.svg'
@@ -29,6 +29,9 @@ import vercel from '../public/skills/vercel.svg'
 import blender from '../public/skills/blender.svg'
 import threejs from '../public/skills/threejs.svg'
 import gsapLogo from '../public/skills/gsap.svg'
+import Loading from '../components/loading'
+import { keyframes } from "@emotion/react";
+import { Reveal } from "react-awesome-reveal";
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -181,6 +184,14 @@ const Home = () => {
     },
   ]
 
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000)
+  });
+
   useEffect(() => {
     const components = document.querySelectorAll('.component')
     const componentOne = document.querySelector('#componentPrevOne')
@@ -263,6 +274,10 @@ const Home = () => {
 
   return (
     <>
+    {loading ? (
+      <Loading/>
+    ) : (
+      <> 
       <section ref={bgRef} className='allContainer'>
         <Banner/>
         <div className={styles.fade}></div>
@@ -346,6 +361,9 @@ const Home = () => {
       <section className={styles.infoContainerSection}>
         <Contact/>
       </section>
+      </>
+    )
+  }
 
     </>
   )

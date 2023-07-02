@@ -1,9 +1,32 @@
-import { useEffect } from 'react'
+'use client'
+import { useEffect, useState } from 'react';
 import ProjectsCard from '../../components/projectCard'
 import styles from '../../styles/Project.module.css'
-import gsap from 'gsap'
+import { keyframes } from "@emotion/react";
+import Loading from '../../components/loading'
 
 const Projects = () => {
+
+  const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setTimeout(() => {
+        setLoading(false);
+    }, 3000)
+    });
+
+
+    const appearCard = keyframes`
+    
+      from {
+        scale: 0.5;
+      }
+    
+      to {
+        scale: 1;
+      }
+
+    `;
 
     const projects = [
         {
@@ -103,21 +126,25 @@ const Projects = () => {
 
 
     return (
+        <>
+        { loading ? <Loading/> : 
         <section className={styles.container}>
             <p className='about'>PROJECTS</p>
             <section className={styles.projectsSection}>
                 <h2 className={styles.title}>Masterworks: Showcasing My Finest Creations and Achievements</h2>
                 <div className={styles.projectsInfo}>
-                    <ProjectsCard projects={projects}/>
+                    <ProjectsCard keyReaveal={appearCard} projects={projects}/>
                 </div>
             </section>
             <section className={styles.projectsSectionB}>
                 <h2 className={styles.title}>The Learning Path: Embarking on my Journey of Early Projects</h2>
                 <div className={styles.projectsInfo}>
-                    <ProjectsCard projects={beginnings}/>
+                    <ProjectsCard keyReaveal={appearCard} projects={beginnings}/>
                 </div>
             </section>
         </section>
+        }
+        </>
     )
 }
 

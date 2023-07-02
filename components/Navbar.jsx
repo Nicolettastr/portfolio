@@ -8,7 +8,7 @@ const NavbarComponent = () => {
     return (
         <Navbar className={styles.navbar_section} expand="md">
           <Container className={styles.nav_btn} fluid>
-            <Navbar.Brand href="#">
+            <Navbar.Brand href="/">
               <Image
               className={styles.navbar_image}
               src='/nicole.png'

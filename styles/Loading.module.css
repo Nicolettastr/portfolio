@@ -1,0 +1,52 @@
+.loadingSection {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 100%;
+    height: 80px;
+    display:flex;
+    gap:5px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.spinner:before,
+.spinner:after {
+    content:"";
+    width:25px;
+    aspect-ratio:1;
+    box-shadow:0 0 0 3px inset #fff;
+    animation: action 1.7s infinite;
+}
+
+.spinner:after {
+    --s:-1;
+    animation-delay:0.75s
+}
+
+@keyframes action {
+    0%     {transform:scaleX(var(--s,1)) translate(0) rotate(0)
+    
+    scale(0.7)}
+
+    16.67% {transform:scaleX(var(--s,1)) translate(-50%) rotate(0)
+    
+    scale(0.8)
+    }
+
+    33.33% {transform:scaleX(var(--s,1)) translate(-50%) rotate(90deg)
+    
+    scale(1)
+    }
+
+    50%,
+    100%   {transform:scaleX(var(--s,1)) translate(0) rotate(90deg)
+    scale(1.05)
+    }
+}
