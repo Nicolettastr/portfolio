@@ -1,11 +1,12 @@
-import { Reveal } from 'react-awesome-reveal';
+import { Fade, Reveal } from 'react-awesome-reveal';
 import styles from '../styles/Home.module.css'
 
-const ProjectCard = ({projects, keyReaveal}) => {
+
+const ProjectCard = ({projects}) => {
 
     const portfolioCard = projects.map((item) => {
         return (
-          <Reveal key={item.id} keyframes={keyReaveal} timingFunction='ease-in-out' >
+          <Fade className={styles.revealCard} key={item.id} timingFunction='ease-in-out' >
           <div key={item.id} className={styles.projectsContainer}>
             <h2 className={styles.projectTtitle}>{item.name}</h2>
             <div className={styles.cardBody}>
@@ -15,7 +16,7 @@ const ProjectCard = ({projects, keyReaveal}) => {
               </a>
             </div>
           </div>
-          </Reveal>
+          </Fade>
         )
       })
 

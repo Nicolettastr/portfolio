@@ -79,7 +79,7 @@ const Contact = () => {
                     <label htmlFor="Message">Message</label>
                     <textarea type="text" placeholder="Message" />
                     <input type="hidden" name="_captcha" value="false"/>
-                    <input type="hidden" name="_next" value="http://localhost:3000/thankyou"/>
+                    <input type="hidden" name="_next" value="https://nicolestruggia.vercel.app/thankyou"/>
                 </div>
                 <div id="button" className={styles.buttonContainer}> 
                 <button type="Submit">Submit</button>

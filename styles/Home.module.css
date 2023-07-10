@@ -364,6 +364,11 @@
   transition: all 1s;
 }
 
+.revealCard {
+  width: 280px;
+  margin: 1rem 0;
+}
+
 .projectsContainer {
   width: 92%;
   height: 250px;

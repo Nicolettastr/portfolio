@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../public/cero.png');
+    background: black;
     overflow: hidden;
 }
 
@@ -127,13 +127,41 @@
 .hexagon {
     width: 130px;
     height: 130px;
-    rotate: -5deg;
+    animation: rotate 5s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        rotate: -5deg ;
+    }
+
+    50% {
+        rotate: 15deg ;
+    }
+
+    100% {
+        rotate: -5deg ;
+    }
 }
 
 .hexagon2 {
     width: 155px;
     height: 155px;
-    rotate: 11deg;
+    animation: rotate2 4s infinite;
+}
+
+@keyframes rotate2 {
+    0% {
+        rotate: 11deg ;
+    }
+
+    50% {
+        rotate: -8deg ;
+    }
+
+    100% {
+        rotate: 11deg ;
+    }
 }
 
 .hexagon a,
@@ -150,6 +178,40 @@
 .hexagon img,
 .hexagon2 img {
     width: 100px !important;
+}
+
+.thanksSection {
+    width: 100vw;
+    height: fit-content;
+    background: url('../public/nicole.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.sectionInner {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.94);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionInner div {
+    width: 80%;
+    color: white;
+}
+
+.socialMediaTY div {
+    display: flex;
+    flex-direction: column;
+}
+
+.socialMediaTY div a {
+    color: #11afee;
+    text-decoration: none;
 }
 
 @media (min-width: 500px) {
@@ -172,6 +234,18 @@
 }
 
 @media (min-width: 800px) {
+    .sectionInner {
+        height: 60vh;
+    }
+
+    .sectionInner div {
+        width: 50%;
+    }
+
+    .thanksSection {
+        padding: 2rem;
+    }
+
     .hireMe {
         font-size: 7rem;
     }

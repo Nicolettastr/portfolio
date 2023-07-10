@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import ProjectsCard from '../../components/projectCard'
 import styles from '../../styles/Project.module.css'
-import { keyframes } from "@emotion/react";
 import Loading from '../../components/loading'
 
 const Projects = () => {
@@ -14,19 +13,6 @@ const Projects = () => {
         setLoading(false);
     }, 3000)
     });
-
-
-    const appearCard = keyframes`
-    
-      from {
-        scale: 0.5;
-      }
-    
-      to {
-        scale: 1;
-      }
-
-    `;
 
     const projects = [
         {
@@ -133,13 +119,13 @@ const Projects = () => {
             <section className={styles.projectsSection}>
                 <h2 className={styles.title}>Masterworks: Showcasing My Finest Creations and Achievements</h2>
                 <div className={styles.projectsInfo}>
-                    <ProjectsCard keyReaveal={appearCard} projects={projects}/>
+                    <ProjectsCard projects={projects}/>
                 </div>
             </section>
             <section className={styles.projectsSectionB}>
                 <h2 className={styles.title}>The Learning Path: Embarking on my Journey of Early Projects</h2>
                 <div className={styles.projectsInfo}>
-                    <ProjectsCard keyReaveal={appearCard} projects={beginnings}/>
+                    <ProjectsCard  projects={beginnings}/>
                 </div>
             </section>
         </section>

@@ -40,32 +40,6 @@ const About = () => {
         }
     `;
 
-    const appearText = keyframes `
-    
-        from {
-            transform: translateY(-400px);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    
-    `;
-
-    const appearSkills = keyframes`
-    
-        from {
-            scale: 0.6;
-        }
-
-        to {
-            scale: 1;
-        }
-
-    `;
-
     return (
         <>
         { loading ? <Loading/> : 
@@ -89,12 +63,9 @@ const About = () => {
                 </figure>
                 </div>
             </div>
-            <Reveal keyframes={appearText} delay={1000} duration={1500} timingFunction="ease-in-out">
             <section id='presentation' className={styles.info}>
                 <p>Hello! I am Nicole Struggia, a passionate Front-end Developer based in Madrid, Spain. I have over 3 years of experience in web development, specializing in HTML, CSS, JavaScript, React, Redux, and Git. My goal is to become a senior developer and expand my skills in 3D development. I enjoy playing the piano, watching series, and exploring the world of horror movies. Write me and we can collaborate on exciting projects together! Feel free to reach out to me at nicolettastruggia@hotmail.com. You can also find me on GitHub and LinkedIn.</p>
             </section>
-            </Reveal>
-            <Reveal keyframes={appearSkills} delay={1000} duration={1000} timingFunction='ease-in-out'>
             <section id='skills'  className={styles.skillsContainer}>
                 <h2>Most Use Skills</h2>
                 <div className={styles.skills} >
@@ -105,7 +76,6 @@ const About = () => {
                 })}
                 </div>
             </section>
-            </Reveal>
         </section>
         </Reveal>
         }
