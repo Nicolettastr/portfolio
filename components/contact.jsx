@@ -87,19 +87,6 @@ const Contact = () => {
             </form>
             </div>
         </section>
-        
-        <section className={styles.socialNetwork}>
-            <div className={`hexagonAnimation ${styles.hexagon}`}>
-                <a href="https://www.linkedin.com/in/nicole-struggia/" rel="noreferrer" target="_blank">
-                    <Image src={linkedin} alt='linkedin link'/>
-                </a>
-            </div>
-            <div className={`hexagonAnimation ${styles.hexagon2}`}>
-                <a href="https://github.com/Nicolettastr" target="_blank" rel="noreferrer">
-                    <Image src={github} alt='github link'/>
-                </a>
-            </div>
-        </section>
         </div>
     )
 };
