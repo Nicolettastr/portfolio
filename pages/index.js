@@ -5,8 +5,8 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
 import Banner from '../components/banner'
 import Contact from '../components/contact'
-import ProjectCard from '../components/projectCard'
-import { useEffect, useRef, useState } from 'react'
+import HomeProjects from '../components/homeProjects'
+import { useEffect, useRef } from 'react'
 import webImage from '../public/web.png'
 import canva from '../public/skills/canva.svg'
 import css from '../public/skills/css.svg'
@@ -325,7 +325,7 @@ const Home = () => {
         <section id="componentThree" className={`component ${styles.three}`}>
           <div id='componentThreeCont' className={styles.componentThreeCont}>
               <div id='cardContainer' className={styles.cardContainer}>
-                <ProjectCard projects={projectsSection}/>
+                <HomeProjects projects={projectsSection}/>
               </div>
               <div className={styles.moreBtn}>
                 <h2 className='moreBtnH2'>View</h2>

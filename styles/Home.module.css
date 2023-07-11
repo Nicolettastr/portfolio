@@ -368,6 +368,7 @@
 }
 
 .revealCard {
+  width: 280px;
   height: fit-content;
   overflow: hidden;
 }
