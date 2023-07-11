@@ -1,6 +1,6 @@
 .hireMe {
     transition: all 1s;
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 600;
     color: rgb(65, 64, 64);
     padding-left: 2rem;
@@ -216,7 +216,7 @@
 
 @media (min-width: 500px) {
     .hireMe {
-        font-size: 5rem;
+        font-size: 6rem;
         padding-top: 0;
     }
 
