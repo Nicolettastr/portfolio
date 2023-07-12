@@ -29,6 +29,7 @@ import vercel from '../public/skills/vercel.svg'
 import blender from '../public/skills/blender.svg'
 import threejs from '../public/skills/threejs.svg'
 import gsapLogo from '../public/skills/gsap.svg'
+import Link from 'next/link'
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -332,12 +333,12 @@ const Home = () => {
                 <h2 className='moreBtnH2'>All</h2>
                 <h2 className='moreBtnH2'>My</h2>
                 <h2 className='moreBtnH2'>Projects</h2>
-                <a href=''>
+                <Link to='/projects'>
                   <button 
                   className={styles.projectBtn}>
                     View All
                   </button>
-                </a>
+                </Link>
               </div>
           </div>
         </section>
