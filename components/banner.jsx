@@ -30,10 +30,10 @@ const Banner = () => {
     {
       id: 3,
       name: '/pethouse.png',
-      alt: 'Pethouse',
-      skils: 'HTML, CSS, Javascript, React, Bootstrap, Python, Flask, MySQL',
-      description: 'A Platform to search for hotels options for pets.',
-      link: "https://sample-service-name-f7fr.onrender.com/"
+      alt: 'Airbnb clone',
+      skils: 'HTML, CSS, Javascript, React, Next.js, Tailwind, Mongodb, Prisma, Typescript',
+      description: 'A Airbnb-clone website project.',
+      link: "https://myairbclone.vercel.app/"
     }
   ];
 

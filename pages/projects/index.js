@@ -69,6 +69,12 @@ const Projects = () => {
             link: 'https://javascript-game-project.vercel.app/',
             description: 'Players navigate through levels, overcoming obstacles to reach the stars.'
           },
+          {
+            id:11,
+            name: 'Airbnb',
+            link: 'https://myairbclone.vercel.app/',
+            description: 'Stunning Airbnb website replica.'
+          },
       ]
 
     const beginnings = [
