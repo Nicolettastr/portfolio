@@ -333,7 +333,7 @@ const Home = () => {
                 <h2 className='moreBtnH2'>All</h2>
                 <h2 className='moreBtnH2'>My</h2>
                 <h2 className='moreBtnH2'>Projects</h2>
-                <Link to='/projects'>
+                <Link href='/projects'>
                   <button 
                   className={styles.projectBtn}>
                     View All
