@@ -61,6 +61,14 @@ const Resume = () => {
             front: 'HTML, CSS, Javascript, React, Flux',
             date: '01/2023. Present',
             design: 'Figma, Canva'
+        },
+        {
+            id: 6,
+            name: 'Airbnb clone',
+            sub: 'Personal project, Airbnb clone website project.',
+            front: 'HTML, Javascript, React, Next.js, Typescript, tailwind.css ',
+            back: 'Back: Prisnam, Mongodb',
+            date: '07/2023 / 09/2023',
         }
     ]
 
