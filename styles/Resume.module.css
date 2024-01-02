@@ -128,6 +128,28 @@
     justify-content: center;
 }
 
+.soft {
+    width: 100%;
+    max-width: 750px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-content: space-evenly;
+    padding: 0;
+}
+
+.soft li {
+    width: 200px;
+    height: 40px;
+    margin-right: 1rem;
+    text-align: center;
+    background: rgba(250, 250, 250, 0.5);
+    margin: 0.3rem 0;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .educationSection {
     width: 100%;
     max-width: 750px;
@@ -235,7 +257,7 @@
     .educationItem {
         justify-content: space-around;
     }
-    
+
     .educationItem div {
         max-width: 300px;
     }
